@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    border: 1px solid red;
+    display: flex;
+    padding: 20px;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-panel {
+    border: 1px solid green;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+   
+}
+

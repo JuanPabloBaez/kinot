@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: inline;
+    height: 25vh;
+    width: auto;
+    padding: 1%;
+    
+         
+    
+}
+
+.card-container img {
+   
+    height: 100%; 
+    margin: 0 auto;
+    
+}
+
+.card-container img:hover {
+    height: 28vh;
+    z-index: 1;
+}

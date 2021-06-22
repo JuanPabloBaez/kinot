@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-body {
+    border: 5px solid green;
+   
+    display: flex;
+    width: 95%;
+    height: auto;
+    max-width: 1110px;
+    margin: 0 auto;
+    justify-content: space-around;  
+    align-items: center;
+   
+    flex-wrap: wrap;
+    
+}
+
+.mainList{
+    margin-top: 10%;
+}
+
+.mainList img {
+    height: 25vh;
+      
+}

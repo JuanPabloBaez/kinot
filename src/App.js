@@ -1,24 +1,83 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
+import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './App.css';
+import NavBar from './components/nav.js';
+import Main from './components/main';
+import FilmPage from './components/filmPage';
+import About from './components/about';
 
 function App() {
+  const [list, setList] = useState([]);
+  const [isLoading, setIsloading] = useState(true);
+
+  useEffect(() => {
+    async function getList () {
+      try {
+           axios.get('http://localhost:4000/list').then(
+          (response) => {
+            
+            setList(response.data);
+            
+            setIsloading(false);
+            
+            
+            return;
+           
+          }
+        )
+      }catch(error){
+        console.log('fatal error')
+      }
+    }
+    getList();
+    
+    
+
+  },[])
+
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        
+        <NavBar/>
+        
+        {isLoading ? (
+
+          <h1>Loading</h1>
+
+        ):(
+                            
+              <>
+              <Switch>
+                <Route exact path="/">
+                  <>
+                  <Main list={list} />
+                  </>  
+                </Route >
+                <Route path="/filmpage/:id">
+                  <FilmPage list={list} /> 
+                </Route>
+                <Route path="/about">
+                  <About/>
+                </Route>
+              </Switch>
+              </>
+               
+          
+        
+          )
+        }
+      </div>
+     </Router>
   );
 }
 
