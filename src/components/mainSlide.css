@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider-wrap {
+    
+    
+    max-width: 75vh ;
+    background-color: hsla(0, 59%, 41%, 0.3);
+    margin-bottom: 35px;
+}
+
+
+.slide-card{
+
+    
+    border: 2px dotted brown;
+    display: flex;
+    position: relative;
+}
+
+.slide-text {
+    border:1px solid chartreuse;
+    position: absolute;
+    height: 12vh;
+    bottom: 0;
+    padding: 2% 0 2% 10%;
+    width: 100%;
+    background-color: hsla(0, 0%, 100%,0.3);
+    
+}
+.mainSlider img {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.button {
+    background-color: orange;
+    margin: 15% 30%;
+}
+
+.slick-arrow{
+    background-color: orangered;
+    height: 5vh;
+    width: 3vh;
+}
+
+
+.mainSlider {
+    height: 50vh;
+    border: 2px dotted brown;
+    display: flex;
+    position: relative;
+}
+
+.subSlider {
+    height: 25vh;
+    border: 2px dotted brown;
+    display: flex;
+    position: relative;
+}

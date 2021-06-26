@@ -11,6 +11,7 @@ import NavBar from './components/nav.js';
 import Main from './components/main';
 import FilmPage from './components/filmPage';
 import About from './components/about';
+import Contact from './components/contact';
 
 function App() {
   const [list, setList] = useState([]);
@@ -58,10 +59,8 @@ function App() {
                             
               <>
               <Switch>
-                <Route exact path="/">
-                  <>
-                  <Main list={list} />
-                  </>  
+                <Route exact path="/">               
+                  <Main list={list} />                 
                 </Route >
                 <Route path="/filmpage/:id">
                   <FilmPage list={list} /> 
@@ -69,11 +68,14 @@ function App() {
                 <Route path="/about">
                   <About/>
                 </Route>
+                <Route path="/contact">
+                  <Contact/>
+                </Route>
               </Switch>
               </>
                
           
-        
+          
           )
         }
       </div>

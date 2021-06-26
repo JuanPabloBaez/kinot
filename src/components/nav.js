@@ -11,7 +11,7 @@ const NavBar = () => {
 
             <div className="link-panel">
                 <Link to="/about">About</Link>
-                <Link to="/filmpage">Contact</Link>
+                <Link to="/contact">Contact</Link>
             </div>
 
 

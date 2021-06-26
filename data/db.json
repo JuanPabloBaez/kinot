@@ -28,7 +28,8 @@
             "runtime":"26:25",
             "format":"Video HD",
             "color":"color",
-            "aspect_ratio":"1.85:1"
+            "aspect_ratio":"1.85:1",
+            "featured": true
         },
         {
             "title" :"Acerca de Variaciones Espectrales ", 
@@ -58,7 +59,8 @@
             "runtime":"7",
             "format":"Video Hd",
             "color":"color",
-            "aspect_ratio":"16:9"
+            "aspect_ratio":"16:9",
+            "featured": true
         },
         {
             "title" :"Bocetos", 
@@ -88,7 +90,8 @@
             "runtime":"8",
             "format":"Video HD",
             "color":"color",
-            "aspect_ratio":"16:9"
+            "aspect_ratio":"16:9",
+            "featured": false
         },
         {
             "title" :"Los Osos No Han Venido", 
@@ -118,7 +121,8 @@
             "runtime":"13",
             "format":"DV",
             "color":"color",
-            "aspect_ratio":"16:9"
+            "aspect_ratio":"16:9",
+            "featured": false
         },
         {
             "title" :"The Hunting Bird", 
@@ -148,7 +152,8 @@
             "runtime":"04:00",
             "format":"Video HD",
             "color":"color",
-            "aspect_ratio":"1.85:1"
+            "aspect_ratio":"1.85:1",
+            "featured": true
         }
     ,
      {
@@ -180,6 +185,7 @@
         "runtime":"",
         "format":"",
         "color":"",
-        "aspect_ratio":""
+        "aspect_ratio":"",
+        "featured": true
     } ]
 }

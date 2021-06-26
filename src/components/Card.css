@@ -6,7 +6,7 @@
 
 .card-container {
     display: inline;
-    height: 25vh;
+    height: 25vh !important  ;
     width: auto;
     padding: 1%;
     
