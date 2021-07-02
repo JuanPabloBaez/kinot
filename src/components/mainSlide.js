@@ -20,6 +20,13 @@ function MainSlider ({list}) {
       getSelection();
 
     },[]) 
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrent(current === featured.length - 1 ? 0 : current + 1)
+      },5000);
+      return () => clearInterval(interval);
+    },[current])
    
     
     
