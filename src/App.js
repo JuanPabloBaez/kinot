@@ -22,14 +22,9 @@ function App() {
       try {
            axios.get('http://localhost:4000/list').then(
           (response) => {
-            
             setList(response.data);
-            
             setIsloading(false);
-            
-            
             return;
-           
           }
         )
       }catch(error){
@@ -37,45 +32,31 @@ function App() {
       }
     }
     getList();
-    
-    
-
   },[])
-
-  
-
 
   return (
     <Router>
       <div className="App">
-        
         <NavBar/>
-        
         {isLoading ? (
-
           <h1>Loading</h1>
-
-        ):(
-                            
-              <>
-              <Switch>
-                <Route exact path="/">               
-                  <Main list={list} />                 
-                </Route >
-                <Route path="/filmpage/:id">
-                  <FilmPage list={list} /> 
-                </Route>
-                <Route path="/about">
-                  <About/>
-                </Route>
-                <Route path="/contact">
-                  <Contact/>
-                </Route>
-              </Switch>
-              </>
-               
-          
-          
+        ):(              
+          <>
+          <Switch>
+            <Route exact path="/">               
+              <Main list={list} />                 
+            </Route >
+            <Route path="/filmpage/:id">
+              <FilmPage list={list} /> 
+            </Route>
+            <Route path="/about">
+              <About/>
+            </Route>
+            <Route path="/contact">
+              <Contact/>
+            </Route>
+          </Switch>
+          </>          
           )
         }
       </div>

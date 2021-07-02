@@ -6,12 +6,9 @@
 
 .card-container {
     display: inline;
-    height: 25vh !important  ;
-    width: auto;
-    padding: 1%;
-    
-         
-    
+    height: 25vh  ;
+    width: auto;  
+    margin: 1%;
 }
 
 .card-container img {
@@ -24,4 +21,5 @@
 .card-container img:hover {
     height: 28vh;
     z-index: 1;
+    
 }
