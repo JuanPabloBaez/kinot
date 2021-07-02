@@ -10,15 +10,16 @@ const Card = ({ film }) => {
     
 
     return (
-        
+        <div className="card-container" >
         <Link to={`/filmpage/${film.slug}`}>
-            <div className="card-container" >
+            
             <img src={cardImg.default}
                 alt={film.title}
                 title={film.title}
                 /> 
-            </div>
+            
         </Link>
+        </div>
     )
     
 }
