@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+.page-body {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page-video {
+    margin: 2% auto;
+    border: 1px solid blue;
+    max-width: 95%;
+    height: auto;
+}
+
 .page-poster {
     height: 35vh;
+    object-fit: contain;
+    align-self: flex-start;
+    display: inline-flex;
+
 }
+

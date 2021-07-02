@@ -19,13 +19,7 @@ const FilmPage = (list) => {
   const {
     title,  
     Id,
-    slug,
     video_link,
-    trailer_link,
-    making_of,
-    categorie,
-    tag, 
-    log_line,
     synopsis,       
     director,
     writer,
@@ -43,17 +37,16 @@ const FilmPage = (list) => {
     subtitle,
     runtime,
     format,
-    color,
-    aspect_ratio
+    color
   } = film;
   const pagePoster = require("../images/" + Id + "poster.jpg");
   
   
   return (
-    <>      
-      <h3>{id}</h3>
+    <div className="page-body">      
       
       <ReactPlayer 
+        className="page-video"
         url={video_link}
         controls={true}
         width="800px"
@@ -70,8 +63,22 @@ const FilmPage = (list) => {
       <p>{year}</p>
       <p>{country}</p> 
       <p>{language}</p>
+      <p>{subtitle}</p>
       <p>{runtime} minutes.</p>
-    </>
+      <p>{format}</p>
+      <p>{color}</p>
+
+      <p>{director}</p>
+      <p>{writer}</p>
+      <p>{cast}</p>
+      <p>{producer}</p>
+      <p>{production}</p>
+      <p>{cinematography}</p>
+      <p>{editing}</p>
+      <p>{sound}</p>
+      <p>{vfx}</p>
+      <p>{music}</p>
+    </div>
   );
 }
 
