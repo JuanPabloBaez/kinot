@@ -55,9 +55,25 @@
     position: relative;
 }
 
-.subSlider {
-    height: 25vh;
-    border: 2px dotted brown;
+.subslide-container {
     display: flex;
     position: relative;
+    align-items: center;
+    width: 95%;
+    overflow-x: scroll;
+    background-color: cadetblue;
+   
+}
+
+.card-sub {
+    margin: 50px;   
+}
+
+.subSlide-button {
+    position: fixed;
+}
+
+.button-next{
+    right: 0;
+    position: sticky;
 }

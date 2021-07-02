@@ -1,14 +1,47 @@
-import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+//import {Link} from "react-router-dom";
+//import Slider from "react-slick";
+//import "slick-carousel/slick/slick.css"; 
+//import "slick-carousel/slick/slick-theme.css";
 import "./mainSlide.css";
 import Card from "./Card";
 
 
+ function SubSlider ({list}) {
 
-export default class SubSlider extends Component {
+    const slideCont = document.getElementById("subSlide");
+    console.log(slideCont);
+    
+    function handlePrev (e) {
+      console.log("inside prev");
+      
+      slideCont.style.transform= 'translateX(200px)';
+    }
+    function handleNext (e) {
+      console.log("inside next");
+      
+      slideCont.style.transform= 'translateX(200px)';
+
+    }
+   
+    return(
+      <div id="subSlide" className="subslide-container">
+        <button className="subSlide-button button-prev" onClick={handlePrev}>prev</button>
+        {  
+          list.map((film, index) => {          
+            if (film.Id !== "") {
+              return <Card className="card-sub" film={film} index={index}/>
+            }
+          }) 
+        }
+        <button className="subSlide-button button-next" onClick={handleNext}>next</button>
+      </div>
+    ) 
+ }
+
+ export default SubSlider;
+
+/* export default class SubSlider extends Component {
     
   render() {
     
@@ -72,7 +105,7 @@ export default class SubSlider extends Component {
                         <p>{film.slug}</p>
                         <h2>{film.title}</h2>
                         <p>{film.synopsis}</p>
-                    </div> */}
+                    </div>  close here
                     </Link>
                 </div>
 
@@ -89,4 +122,4 @@ export default class SubSlider extends Component {
       </div>
     );
   }
-}
+} */

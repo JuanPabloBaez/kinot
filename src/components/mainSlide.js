@@ -27,18 +27,16 @@ export default class MainSlider extends Component {
       <div className={"slider-wrap"}>
         <Slider {...settings}>
          
-         {this.props.list.map(film =>{
-           const linkId = `/filmpage/${film.slug}`;
+         {this.props.list.map((film, index) =>{
+
            if (film.featured === true) {
-            const slideImg = require("../images/" + film.Id + "featImg.jpg");
+            const slideImg = require("../images/" + film.Id + "frameA.jpg");
             
-            console.log(linkId)
-             
             return (
               <div className="mainSlider">
                 
-                <Link to={linkId}>
-                  <div className='slide-text'>
+                <Link to={`/filmpage/${film.slug}`}>
+                  <div className='slide-text' index={index}>
                     <p>{film.slug}</p>
                     <h2>{film.title}</h2>
                     <p>{film.synopsis}</p>
