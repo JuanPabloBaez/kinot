@@ -5,25 +5,15 @@
 }
 
 .main-body {
-    border: 5px solid green;
    
     display: flex;
     width: 95%;
-    height: auto;
-    max-width: 1110px;
+    max-width: 1100px;    
     margin: 0 auto;
-    justify-content: space-around;  
+    justify-content: center; 
     align-items: center;
-   
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap; 
 }
 
 
 
-
-
-.mainList img {
-    height: 25vh;
-      
-}

@@ -8,7 +8,7 @@ import './Card.css';
 const Card = ({ film }) => { 
     const cardImg = require('../images/' + film.Id + 'card.jpg');
     
-
+    
     return (
         <div className="card-container" >
         <Link to={`/filmpage/${film.slug}`}>
