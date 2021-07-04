@@ -34,7 +34,12 @@
     object-fit: cover;
     width: 100%;
     border-radius: 10px;
+    animation: fade-in 1s 
 }
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
 
 .slide-text {
     position: absolute;
@@ -68,6 +73,7 @@
 
 
 
+
 .subslide-container {
     display: flex;
     position: relative;
@@ -76,15 +82,29 @@
     overflow-x: scroll;
     background-color: cadetblue;
     margin-top: 2%;
+    scroll-behavior: smooth;
    
-}
+} 
+
+
+
 
 .card-sub {
     margin: 50px;   
 }
 
 .subSlide-button {
-    position: fixed;
+    position: absolute;
+    top: 50%;
+   
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.button-prev {
+    left: 0;
+    position: sticky;
 }
 
 .button-next{

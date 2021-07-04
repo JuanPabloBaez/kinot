@@ -19,14 +19,14 @@ function MainSlider ({list}) {
       };  
       getSelection();
 
-    },[]) 
+    },[list]) 
 
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrent(current === featured.length - 1 ? 0 : current + 1)
-      },5000);
+      },7000);
       return () => clearInterval(interval);
-    },[current])
+    },[current, featured.length ])
    
     
     
@@ -50,11 +50,9 @@ function MainSlider ({list}) {
       <button className="right-arrow" onClick={nextSlide}>next</button>
       {
         featured.map((film, index)=> {
-            const slideImg = require("../images/" + film.Id + "frameA.jpg");
-              
+            const slideImg = require("../images/" + film.Id + "frameA.jpg");   
             return(
-              <div className={index=== current ? 'slide active' : 'slide'} index={index}>
-                
+              <div className={index=== current ? 'slide active' : 'slide'} key={index}>
                 {index === current && (
                   <>
                   <Link to={`/filmpage/${film.slug}`}>
@@ -65,15 +63,10 @@ function MainSlider ({list}) {
                   </Link>
                   <img src={slideImg.default} alt="film frame" className="main-slider-pic" />
                   </>
-                  )}
-                  
-     
+                )}     
               </div>
             ) 
-          }
-        
-          
-          
+          }       
         )
       }
     </section>
