@@ -9,43 +9,65 @@
 .main-slider {
     
     position: relative;
-    display: flex;
-    height: 50vh;
+    display: flex ;
+    height: 55vh;
     justify-content: center;
     align-items: center;
-    
+    margin: 2% auto;
     width: 95%;
+    max-width: 1100px;
+    
+    
+    
+   
+     
+    
 }
 
+
+.slide a {
+    color: currentColor;
+    text-decoration: none;
+    width: 100%;
+    
+    
+}
+
+.slide{
+    display: none;
+    border-radius: 15px; 
+    overflow: hidden;
+    background-color: white;
+    
+    
+    
+}
 .active{
     height: inherit;
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.slide a {
-    color: currentColor;
-    text-decoration: none;
+    
+    
+    
     
 }
 
-.main-slider-pic {
-    object-fit: cover;
-    width: 100%;
-    border-radius: 10px;
-    animation: fade-in 1s 
-}
-@keyframes fade-in {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
+
 
 .slide-text {
     position: absolute;
     bottom: 0;
     padding: 2%;
     background-color: hsl(0, 0%, 100%,0.3);
+    z-index: 3;
+    width: 100%;
+    height: 30%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+   
+    
 
 }
 
@@ -53,20 +75,37 @@
 .left-arrow{
     position: absolute;
     top: 50%;
-    left:10px;
-    z-index: 10;
+    left:-5%;
+    z-index: 4;
     cursor: pointer;
     user-select: none;
+    width: 10vh;
+    transform: rotate(-0.25turn);
+    background: none;
+    border: none;
+    opacity: 0.7;
+
+    
+    
+    
 }
 
 .right-arrow {
     position: absolute;
     top: 50%;
-    right:10px;
-    z-index: 10;
+    right:-5%;
+    z-index: 4;
     cursor: pointer;
     user-select: none;
+    width: 10vh;
+    transform: rotate(0.25turn);
+    background: none;
+    border: none;
+    opacity: 0.8;
 }
+
+
+
 
 
 
@@ -78,36 +117,51 @@
     display: flex;
     position: relative;
     align-items: center;
-    width: 95%;
+    max-width: 1100px;
     overflow-x: scroll;
-    background-color: cadetblue;
-    margin-top: 2%;
-    scroll-behavior: smooth;
-   
+    border-top: 1px solid white;
+    scroll-behavior: smooth; 
 } 
 
-
-
-
-.card-sub {
-    margin: 50px;   
+.subslide-container div {
+    transform: translateX(-4vh);
 }
+
+
+
 
 .subSlide-button {
     position: absolute;
-    top: 50%;
-   
-    z-index: 10;
     cursor: pointer;
     user-select: none;
+    z-index: 4;
+    background: none;
+    border: 1px solid white;
+    padding: 3vh 0;
+    opacity: 0.8;
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 100%, 0.2);
+
+
 }
 
-.button-prev {
+.button-prev  {
     left: 0;
     position: sticky;
+    
+    
 }
 
 .button-next{
     right: 0;
     position: sticky;
+    transform: rotate(0.5turn);
+    
+    
+}
+
+.subSlide-button img {
+    position: static;
+    width: 7vh;
+    
 }

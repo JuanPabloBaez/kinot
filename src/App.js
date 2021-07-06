@@ -59,6 +59,9 @@ function App() {
           </>          
           )
         }
+        <div className="footer">
+          <p>copyright and year</p> 
+        </div>  
       </div>
      </Router>
   );
