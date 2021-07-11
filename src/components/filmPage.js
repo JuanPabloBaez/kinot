@@ -6,6 +6,8 @@ import './filmPage.css';
 
 
 const FilmPage = (list) => {
+  window.scrollTo(0, 0);
+
   const {id} = useParams();
   let film;
 
@@ -36,8 +38,8 @@ const FilmPage = (list) => {
     language,
     subtitle,
     runtime,
-    format,
-    color
+    format
+    
   } = film;
   const pagePoster = require("../images/" + Id + "poster.jpg");
   
@@ -49,35 +51,50 @@ const FilmPage = (list) => {
         className="page-video"
         url={video_link}
         controls={true}
-        width="800px"
-        
+        responsive="true"
+        width="100%"
+        height="50vh"
         	 />
 
-      <img className='page-poster' 
-                src={pagePoster.default}
-                alt={title}
-                title={title}
-                /> 
-      <h1>{title}</h1>
-      <p>{synopsis}</p>
-      <p>{year}</p>
-      <p>{country}</p> 
-      <p>{language}</p>
-      <p>{subtitle}</p>
-      <p>{runtime} minutes.</p>
-      <p>{format}</p>
-      <p>{color}</p>
+      <div className="page-first">
+     
+        <img className='page-poster' 
+                  src={pagePoster.default}
+                  alt={title}
+                  title={title}
+                  />
+        <div className="page-header-container"> 
+          <div className="page-header">
+            <h1>{title}</h1>
+            <p className="page-info">{year} / {country} / {runtime} minutes. / {language} ({subtitle}) / {format} </p>
+          </div>
+          <p className="page-synopsis">{synopsis}</p>
+        </div>
+      </div>
+      
+      
+      
 
-      <p>{director}</p>
-      <p>{writer}</p>
-      <p>{cast}</p>
-      <p>{producer}</p>
-      <p>{production}</p>
-      <p>{cinematography}</p>
-      <p>{editing}</p>
-      <p>{sound}</p>
-      <p>{vfx}</p>
-      <p>{music}</p>
+      <div className="cast">
+        <h2>Cast and Crew</h2>
+      
+            <ul className="cast-list">
+              <li>Director:  {director}</li>
+              <li>Writer:    {writer}</li>
+              <li>Cast:      {cast}</li>
+              <li>Production: {producer}</li>
+              <li>Producer:  {production}</li>
+              <li>Cinematography: {cinematography}</li>
+              <li>Editing:   {editing}</li>
+              <li>Sound:     {sound}</li>
+              <li>Post production: {vfx}</li>
+              <li>Music:     {music}</li>
+            </ul>
+          
+        
+        
+       
+      </div>
     </div>
   );
 }

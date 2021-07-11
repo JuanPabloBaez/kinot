@@ -4,22 +4,21 @@
     box-sizing: border-box;
 }
 
-.card-container {
-    display: inline;
+.card-container { 
     height: 25vh  ;
-    width: auto;  
     margin: 1%;
 }
+
 
 .card-container img {
    
     height: 100%; 
     margin: 0 auto;
+    transition: transform 0.3s;   
+}
+.card-container img:hover {
+    transform: scale(1.15);
     
 }
 
-.card-container img:hover {
-    height: 28vh;
-    z-index: 1;
-    
-}
+

@@ -12,7 +12,7 @@ const Card = ({ film }) => {
     
     return (
         <div className="card-container"  >
-        <Link to={`/filmpage/${film.slug}`}>
+        <Link to={`/film/${film.slug}`}>
             
             <img src={cardImg.default}
                 alt={film.title}

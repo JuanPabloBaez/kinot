@@ -54,10 +54,13 @@ function MainSlider ({list}) {
               <div className={index=== current ? 'slide active' : 'slide'} key={index}>
                 {index === current && (
                   <>
-                  <Link to={`/filmpage/${film.slug}`}>
+                  <Link to={`/film/${film.slug}`}>
                   <div className="slide-text">
-                  <h1>{film.title}</h1>
-                  <p>{film.synopsis}</p>
+                    <div className="slide-header">
+                      <h1>{film.title}</h1>
+                      <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
+                    </div>
+                    <p className="slide-synopsis">{film.synopsis}</p>
                   </div>
                   </Link>
                   
@@ -68,7 +71,7 @@ function MainSlider ({list}) {
               </div>
             ) 
           }       
-        )
+        ).reverse()
       }
     </section>
   )

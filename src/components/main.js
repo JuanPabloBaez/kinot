@@ -2,52 +2,52 @@ import React, {useState, useEffect} from "react";
 import MainSlider from "./mainSlide";
 import SubSliderA from "./subSlideA";
 import SubSliderB from "./subSlideB";
+import SubSliderC from "./subSlideC";
 
 import './main.css';
 
 
 const Main = ({list }) => {
-    const [list2, setList2] = useState("");
-    const [isLoading, setIsloading] = useState(true);
-
+    //const [isLoading, setIsloading] = useState(true);
+    const [listB, setListB] = useState([]);
+    const [listC, setListC] = useState([]);
 
     useEffect(() =>{
-        function getList2 () {
+        function getListB () {
             const documentary = list.filter(film => film.categorie === "documentary");
-            setList2(documentary);
-            setIsloading(false);
+            setListB(documentary);
+            console.log(documentary);
             return
-        };
-        getList2();
+        }; 
+        getListB();
         
-    }, [list])
+        }, [list]);
+
+    useEffect(() =>{
+        function getListC () {
+            const shortfilm = list.filter(film => film.runtime < 15);
+            setListC(shortfilm);
+            console.log(listC);
+            return
+        }; 
+        getListC();
+        }, [list]);
+
+
     
     return( 
         <>
-        {isLoading ? (
-            <h1>Loading</h1>
-          ):( 
             <div className="main-body">
                 <div className="main-wrap">  
                     <MainSlider list={list} />
                     <p className="slide-tag">most recent</p>
                     <SubSliderA list={list}  />
                     <p className="slide-tag">documentary</p>
-                    <SubSliderB list2={list2}/>
+                    <SubSliderB listB={listB}/>
+                    <p className="slide-tag">shortfilm</p>
+                    <SubSliderC listC={listC}/> 
                 </div>       
-
-
-         {/*    <div className="mainList">
-            {
-                list.map((film) => {
-                    return(   
-                        <Card film={film}  />                  
-                    ) 
-                })                              
-            }
-            </div> */}
-            </div>)
-        }
+            </div>
          </> 
         
        

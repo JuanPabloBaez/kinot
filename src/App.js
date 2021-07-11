@@ -7,11 +7,13 @@ import {
   Route
 } from "react-router-dom";
 import './App.css';
-import NavBar from './components/nav.js';
+import NavBar from './components/nav';
 import Main from './components/main';
 import FilmPage from './components/filmPage';
 import About from './components/about';
 import Contact from './components/contact';
+import Catalog from './components/catalog';
+
 
 function App() {
   const [list, setList] = useState([]);
@@ -46,8 +48,11 @@ function App() {
             <Route exact path="/">               
               <Main list={list} />                 
             </Route >
-            <Route path="/filmpage/:id">
+            <Route path="/film/:id">
               <FilmPage list={list} /> 
+            </Route>
+            <Route path="/catalog">
+              <Catalog list={list}/>
             </Route>
             <Route path="/about">
               <About/>

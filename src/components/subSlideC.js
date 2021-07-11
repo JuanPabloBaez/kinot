@@ -5,30 +5,35 @@ import Arrow from "../assets/Arrow.png"; // <a target="_blank" href="https://ico
 
 
 
- function SubSliderB ({listB}) {
-  const slideRefB = useRef(null);
-  console.log(listB)
+ function SubSliderC ({listC}) {
+  
+  const slideRefC = useRef(null);
+
+
+  
+ 
+
     
     function handlePrev (e) {
-      slideRefB.current.scrollLeft += -400; 
+      slideRefC.current.scrollLeft += -400; 
     }
     function handleNext (e) {  
-      slideRefB.current.scrollLeft += 400; 
+      slideRefC.current.scrollLeft += 400; 
     }
   
     return(
-      <div className="subslide-container" ref={slideRefB}  >
+      <div className="subslide-container" ref={slideRefC} >
         <button className="subSlide-button button-prev" onClick={handlePrev}><img src={Arrow} alt="Gallery previous" /></button>
         {  
-          listB.map((film, index) => {          
+          listC.map((film, index) => {          
             if (film.Id !== "") {
-              return <Card className="card-sub" film={film} key={index} />
+              return <Card className="card-sub" film={film} key={index}  />
             }
-          }) 
+          }).reverse() 
         }        
         <button className="subSlide-button button-next" onClick={handleNext}><img src={Arrow} alt="Gallery previous" /></button>
       </div>
     ) 
  }
 
- export default SubSliderB;
+ export default SubSliderC;
