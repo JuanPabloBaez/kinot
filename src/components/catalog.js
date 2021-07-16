@@ -11,8 +11,13 @@ const Catalog = ({list}) => {
             {
                 list.map((film, index) => {
                     if (film.Id !== "") {
-                        return  <Card  film={film} key={index}  />    
-                      }
+                        return( 
+                            <div className="catalog-card-container" key={index}>
+                                {/* <div className="catalog-label"> </div> */}
+                                <Card  film={film} />
+                           </div>
+                        ) 
+                    } return null
                 })                           
             }
             </div>

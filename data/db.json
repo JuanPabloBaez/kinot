@@ -286,7 +286,7 @@
     },
     {
 
-        "title" :"Antología Rural, Poetas y Cantores del Valle de Putaendo.", 
+        "title" :"Antología Rural, Poetas y Cantores del Valle de Putaendo", 
         "Id" :"21-06-10",
         "slug": "antologia_rural" ,
         "video_link":["https://vimeo.com/198127594", "https://vimeo.com/198118383", "https://vimeo.com/198253060", "https://vimeo.com/198391761"],
@@ -350,12 +350,14 @@
      {
         "title" :"", 
         "Id" :"",
+        "featured": false,
+        "active": false,
         "slug":"",
         "video_link":"",
         "trailer_link":"",
         "making_of":"",
-        "categorie":"",
-        "tag":"", 
+        "categorie":[""],
+        "tag":[""], 
         "log_line": "",
         "synopsis":"",       
         "director":"",
@@ -363,19 +365,17 @@
         "cast":"",
         "producer":"",
         "production":"",
+        "production_link": "" ,
         "cinematography": "",
         "editing":"",
         "sound":"",
-        "vfx":"",
+        "post_production":"",
         "music":"",        
         "year":"",
         "country":"",
         "language":"",
         "subtitle":"",
         "runtime":"",
-        "format":"",
-        "color":"",
-        "aspect_ratio":"",
-        "featured": false
+        "format":""        
     } ]
 }

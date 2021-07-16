@@ -5,17 +5,42 @@
 }
 
 .catalog-body{
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     display: flex;
-    margin: 0 auto;
     
-
+    background-color: black;
 }
 
 .main-list {
+    width: 90%;
+    max-width: 1060px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    margin: 2% auto;
+    padding: 2% auto;
+    justify-content: left;
+    
+}
 
+.catalog-card-container {
+    margin: 1%;
+    height: fit-content;
+    position: relative;
+    
+}
+
+.catalog-label {
+    position: absolute;
+    left: -20%;
+    height: 30vh;
+    width: 40vh;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    opacity: 0;
+    
+    transition: opacity 0.3s;
+    z-index: 1;
+    
+}
+.catalog-label:hover {
+    opacity: 1;
 }

@@ -14,9 +14,9 @@ const Main = ({list }) => {
 
     useEffect(() =>{
         function getListB () {
-            const documentary = list.filter(film => film.categorie === "documentary");
+            const documentary = list.filter(film => film.categorie.includes("Documentary"));
             setListB(documentary);
-            console.log(documentary);
+            
             return
         }; 
         getListB();
@@ -27,7 +27,6 @@ const Main = ({list }) => {
         function getListC () {
             const shortfilm = list.filter(film => film.runtime < 15);
             setListC(shortfilm);
-            console.log(listC);
             return
         }; 
         getListC();

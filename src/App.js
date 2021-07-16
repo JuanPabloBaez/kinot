@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     async function getList () {
       try {
-           axios.get('http://localhost:4000/list').then(
+           axios.get('http://localhost:8000/api/films').then(
           (response) => {
             setList(response.data);
             setIsloading(false);
