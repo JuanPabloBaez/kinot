@@ -10,19 +10,27 @@
 .about-content {
     display: flex;
     padding: 2%;
-    height: 75vh;
+    margin-bottom: 5%;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
     font-weight: 300;  
+    text-align: justify;
 }
-.about-content video {
+.videoTag {
     border-radius: 5px;
-    margin: 0 1%;
+    object-fit: contain;
+    
+    border: red;
 }
 .about-sub {
     max-width: 400px;
-    margin: 0 1%;
+    height: inherit;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 .about-sub h1 {
     font-size: 3.5em;
@@ -32,24 +40,24 @@
 }
 .about-textB{
     max-width: 400px;
-    margin: 0 1%;   
+    margin-right: 2%;   
 }
 
 @media screen and (max-width: 650px), (aspect-ratio: 4/3) {
     .about-content {
-        border: 5px solid red;
-        width: fit-content;
+        margin-bottom: 10%;
+        position: relative;
+        width: 100%;  
     }
     .about-sub {
         position: absolute;
         background-color: hsla(0, 0%, 100%, 0.5);
-        width: inherit;
-        object-fit: contain;
+        margin: 5% 0;
         padding: 10px;
     }
     .about-textB {
         position: absolute;
         background-color: hsla(0, 0%, 100%, 0.5);
-        padding: 10px;
+        margin: 5% 0;    
     }
 }

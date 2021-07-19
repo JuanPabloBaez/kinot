@@ -17,8 +17,6 @@ function FilmPageGallery (film) {
         function getImages () {
           const preImages = gallerySet.filter(set => set.default.includes(film.film.Id + "set"));
           setImagesSet(preImages);
-          
-          
           return
         }
         getImages();
@@ -27,12 +25,12 @@ function FilmPageGallery (film) {
 
 
 
-   /*  useEffect(() => {
+      useEffect(() => {
       const interval = setInterval(() => {
-        setCurrent(current === images.length - 1 ? 0 : current + 1)
+        setCurrent(current === imagesSet.length - 1 ? 0 : current + 1)
       },5000);
       return () => clearInterval(interval);
-    },[current, images.length ]) */
+    },[current, imagesSet.length ]) 
    
     
     
@@ -49,12 +47,12 @@ function FilmPageGallery (film) {
   return (
     <section className='page-slider'>
       <button className="page-left-arrow" onClick={prevSlide}>
-        <svg id="i-caret-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <svg id="i-caret-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
           <path d="M22 30 L6 16 22 2 Z" />
         </svg>
       </button>
       <button className="page-right-arrow" onClick={nextSlide}>
-        <svg id="i-caret-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <svg id="i-caret-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
           <path d="M10 30 L26 16 10 2 Z" />
         </svg> 
       </button>
