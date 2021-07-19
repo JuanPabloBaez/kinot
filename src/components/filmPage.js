@@ -71,7 +71,9 @@ const FilmPage = (list) => {
     getEpisode();
     },[])
 
-  
+    
+    
+
 
   
 
@@ -80,7 +82,7 @@ const FilmPage = (list) => {
   const pagePoster = require("../images/" + Id + "poster.jpg");
 
 
-  console.log(production.link)
+ 
   
   return (
     <div className="page-body">      
@@ -137,10 +139,15 @@ const FilmPage = (list) => {
             { director  && <li>Director:  {director}</li>}
             { writer    && <li>Writer:    {writer}</li>}
             { cast      && <li>Cast:      {cast}</li>}
-            
-            
-            { production.link && <li>Production: <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li>}
-            { production && <li>Production:  {production}</li>}
+            {(function() {
+              if ( production && production_link !=="null" ) {
+                  return <li>Production: <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li> ;  
+              } if (production ==="") {
+                  return null
+              } else {
+                  return <li>Production:  {production}</li>;
+              }
+            })()}
             { producer  && <li>Producer: {producer}</li>}
             {cinematography && <li>Cinematography: {cinematography}</li>}
             {editing    && <li>Editing:   {editing}</li>}
