@@ -19,8 +19,6 @@ const FilmPage = (list) => {
 
 
   const film = list.list.filter(item => item.slug === id)[0];
-    
-
   const {
     title,  
     Id,
@@ -46,19 +44,34 @@ const FilmPage = (list) => {
     subtitle,
     runtime,
     format
-    
   } = film;
 
-
-    /* useEffect(() => {
-      function getImage () {
-        const setPhoto =  require("../images/" + Id + "setA.jpg")
-        if (setPhoto){
-          setSetImg(true)
-        } else  setSetImg(true)
+  useEffect(() => {
+    function getImg () {
+      try { 
+        require("../images/" + Id + "setA.jpg");
+        console.log("there is");
+        setSetImg(true)
+      } catch(error) {
+        console.log("there isn't");
+        setSetImg(false)
       }
+
+    } 
+    
+    getImg();
+
+  },[ ]);
+  
+  /*   useEffect(() => {
+      function getImage () {
+        if ( `../images/${Id}setA.jpg` ) {
+          setSetImg(true)
+        } else  {setSetImg(false)}
+      } 
       getImage();
-    },[ ]) */
+    },[ ]); */
+
     
     useEffect(() =>{
     
@@ -77,7 +90,7 @@ const FilmPage = (list) => {
 
   
 
-  //const setPhoto =  require("../images/" + Id + "setA.jpg");
+  //const setPhoto =  require(`../images/${Id}setA.jpg`);
 
   const pagePoster = require("../images/" + Id + "poster.jpg");
 
@@ -156,8 +169,8 @@ const FilmPage = (list) => {
             {music      && <li>Music:     {music}</li>}
           </ul>
         </div>
-        <div className="media">
-          
+        
+        <div className="media"> 
           { trailer_link && <> 
             <button className="page-button button-trailer" onClick={() => setPopupA(true)} >
               <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
@@ -177,7 +190,7 @@ const FilmPage = (list) => {
               </Popup> </>
           }
 
-         {/*  {setPhoto && <> */}
+         { setImg===true && <> 
             <button className="page-button button-gallery" onClick={() => setPopupB(true)} >
               <svg id="i-photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
                 <path d="M20 24 L12 16 2 26 2 2 30 2 30 24 M16 20 L22 14 30 22 30 30 2 30 2 24" />
@@ -188,7 +201,7 @@ const FilmPage = (list) => {
             <Popup trigger={popupB} setTrigger={setPopupB}>
               <FilmPageGallery film={film} />    
             </Popup>
-       {/*    </>} */}
+          </>} 
           
 
 
@@ -212,15 +225,13 @@ const FilmPage = (list) => {
             </Popup>
            </>}
   
-              
-         
-        
         </div>
       </div>
         
     </div>
     
   );
+  
 }
 
 export default FilmPage;
