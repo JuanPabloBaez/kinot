@@ -17,12 +17,12 @@ function MainSlider ({list}) {
       getSelection();
     },[list]) 
 
-    useEffect(() => {
+/*     useEffect(() => {
       const interval = setInterval(() => {
         setCurrent(current === featured.length - 1 ? 0 : current + 1)
       },10000);
       return () => clearInterval(interval);
-    },[current, featured.length ])
+    },[current, featured.length ]) */
    
     const nextSlide = () => {
       setCurrent( current === featured.length - 1 ? 0 : current + 1);
