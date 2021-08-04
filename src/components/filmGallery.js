@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CrossfadeImage from "react-crossfade-image";
 import './filmGallery.css';
 
 
@@ -25,7 +26,7 @@ function FilmGallery ({film}) {
         getImages();
         
     },[film.Id]);
-    //console.log(images);
+   
 
       
       async function setOrder ()  {
@@ -49,26 +50,13 @@ function FilmGallery ({film}) {
       
     return (
         < div className="film-gallery-container">
-          { 
-           images && images.map((frame, index)=> {
-                return(
-                  <>
-      
-                  <img src={frame.default} alt="film frame" className='film-gallery' key={index} />
-                 
-                 {/* { index === current ?  <img src={frame.default} alt="film frame" className='film-gallery aktiv' key={index} /> : <img src={frame.default} alt="film frame" className='film-gallery' key={index} style={{"z-index": {index}}} /> } */}
-                 </>
-                 /* <img src={frame.default} alt="film frame" className='film-gallery' key={index} />    */               
-                  
-                   /*  <div className={index=== current ? 'gallery gallery-active' : 'gallery'} key={index}>
-                      {index === current && (
-                        <img src={frame.default} alt="film frame" className="gallery-pic" key={index} />                      
-                      )}
-                  </div> */
-                
-                )                     
-            })
-          }            
+           {images[0] && 
+           <CrossfadeImage
+          src={images[0].default}
+          duration={1000}
+          timingFunction={"ease-out"}
+          width= "100%"
+        />  }         
         </div>
       )
     } 

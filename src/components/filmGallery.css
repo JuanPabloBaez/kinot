@@ -13,37 +13,15 @@
     flex-direction: row;
     
 }
- .film-gallery {
-    position: relative;
-    left: 0;
-    top: 0;
-    object-fit: cover;
+.CrossfadeImage{
     width: 100%;
-    height: 100%;
-    z-index: 10;
-    
     
 }
 
- .film-gallery-container:last-child {
-    animation-name: fader;
-    animation-timing-function: linear;
-    animation-delay: 1.5s; 
-    animation-duration: 0.8s;
-    background: none;
-    z-index: 20;
-    
-    background: none;
-    
-  }
-
- 
- @keyframes fader {
-    0%  { opacity: 1; }
-   
-    100% { opacity: 0; }
-   
-  }
+.CrossfadeImage img {
+    object-fit: cover;
+    width: 100%;
+}
  
 
 
