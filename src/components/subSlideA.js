@@ -39,7 +39,6 @@ import Card from "./Card";
             } return null
           }).reverse() 
         } 
-             
         <button className="subSlide-button button-next" onClick={handleNext}>
           <svg id="i-chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="60" height="130" fill="none" stroke="hsla(0, 0%, 100%, 0.9)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6">
             <path d="M12 30 L24 16 12 2" />

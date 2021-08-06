@@ -3,8 +3,6 @@ import {Link} from "react-router-dom";
 import "./mainSlide.css";
 import Card from "./Card";
 
-
-
  function SubSliderB ({listB}) {
   const slideRefB = useRef(null);
     

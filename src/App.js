@@ -65,7 +65,7 @@ function App() {
           )
         }
         <div className="footer">
-          <p>copyright and year</p> 
+          <p>&copy; {new Date().getFullYear()}</p> 
         </div>  
       </div>
      </Router>

@@ -50,69 +50,43 @@ const FilmPage = (list) => {
   useEffect(() => {
     function getImg () {
       try { 
-        require("../images/" + Id + "setA.jpg");
-        console.log("there is");
+        require("../images/" + Id + "setA.jpg");        
         setSetImg(true)
       } catch(error) {
-        console.log("there isn't");
         setSetImg(false)
       }
-
     } 
-    
     getImg();
-
   },[ ]);
   
-  /*   useEffect(() => {
-      function getImage () {
-        if ( `../images/${Id}setA.jpg` ) {
-          setSetImg(true)
-        } else  {setSetImg(false)}
-      } 
-      getImage();
-    },[ ]); */
 
-    
     useEffect(() =>{
-    
       function getEpisode () {
         const firstEp = video_link_serie[0];
         setEpisode(firstEp)
         return
-  
       }
     getEpisode();
     },[])
 
-    
-    
-
-
-  
-
-  //const setPhoto =  require(`../images/${Id}setA.jpg`);
 
   const pagePoster = require("../images/" + Id + "poster.jpg");
-
-
- 
   
   return (
     <div className="page-body">      
       
       { videoPlayer===false ? 
-      <div className="pre-Player">
-        <button className="pressPlayer" onClick={() => setVideoPlayer(true)}>
-          <svg id="i-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-            <path d="M10 2 L10 30 24 16 Z" />
-          </svg>
-          Watch Film
-        </button>
-        <FilmGallery film={film}/>
-      </div> 
-    :
-    <>
+        <div className="pre-Player">
+          <button className="pressPlayer" onClick={() => setVideoPlayer(true)}>
+            <svg id="i-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+              <path d="M10 2 L10 30 24 16 Z" />
+            </svg>
+            Watch Film
+          </button>
+          <FilmGallery film={film}/>
+        </div> 
+      :
+      <>
         {video_link_serie.length <= 1 && 
           <ReactPlayer 
           className="page-video"
@@ -138,13 +112,6 @@ const FilmPage = (list) => {
         }
       </>    
     }
-      
-
-
-
-
-      
-
 
       {video_link_serie.length > 1 && 
         <div className="serie-player">
@@ -155,7 +122,6 @@ const FilmPage = (list) => {
          
 
       <div className="page-first">
-     
         <img className='page-poster' 
                   src={pagePoster.default}
                   alt={title}
@@ -169,7 +135,6 @@ const FilmPage = (list) => {
           <p className="page-synopsis">{synopsis}</p>
         </div>
       </div>
-      
       
       
       <div className="page-second">
@@ -231,8 +196,6 @@ const FilmPage = (list) => {
             </Popup>
           </>} 
           
-
-
           { making_Of && <>
             <button className="page-button button-making-of" onClick={() => setPopupC(true)} >
             <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
@@ -248,19 +211,15 @@ const FilmPage = (list) => {
                 playing={true}
                 responsive="true"
                 width="100%"
-                height="60vh"
-                
+                height="60vh"         
               />
             </Popup>
            </>}
-  
         </div>
       </div>
         
-    </div>
-    
+    </div> 
   );
-  
 }
 
 export default FilmPage;

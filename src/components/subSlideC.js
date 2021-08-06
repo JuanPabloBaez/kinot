@@ -3,17 +3,10 @@ import {Link} from "react-router-dom";
 import "./mainSlide.css";
 import Card from "./Card";
 
-
-
  function SubSliderC ({listC}) {
   
-  const slideRefC = useRef(null);
+    const slideRefC = useRef(null);
 
-
-  
- 
-
-    
     function handlePrev (e) {
       slideRefC.current.scrollLeft += -400; 
     }
@@ -33,15 +26,16 @@ import Card from "./Card";
             if (film.active === true) {
               return(
                 <div className="sub-card-container" key={index}>
-                <Link to={`/film/${film.slug}`}>
-                  <div className="card-overlay"> 
-                    <h5>{film.title}</h5>
-                    <p>{film.runtime} min.</p>
-                    <p>{film.country}</p>
-                  </div> 
-                  <Card film={film}   />
-                </Link>
-              </div>)            } return null
+                  <Link to={`/film/${film.slug}`}>
+                    <div className="card-overlay"> 
+                      <h5>{film.title}</h5>
+                      <p>{film.runtime} min.</p>
+                      <p>{film.country}</p>
+                    </div> 
+                    <Card film={film}   />
+                  </Link>
+                </div>)            
+              } return null
           }).reverse() 
         }        
         <button className="subSlide-button button-next" onClick={handleNext}>

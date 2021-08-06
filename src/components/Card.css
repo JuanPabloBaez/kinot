@@ -3,18 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .card-container { 
     height: 25vh  ;
     margin: 1%;
 }
-
-
 .card-container img {
    
     height: 100%; 
-    margin: 0 auto;
-    
+    margin: 0 auto;   
 }
 
 

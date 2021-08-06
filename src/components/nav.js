@@ -9,16 +9,12 @@ const NavBar = () => {
             <div className="logo">
                 <Link to="/">LOGO</Link>
             </div>
-
             <div className="link-panel">
                 <Link to="/catalog"><img src={Search} className="search-icon" alt="search icon" /></Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
             </div>
-
-
         </div>
-        
     )
 }
 

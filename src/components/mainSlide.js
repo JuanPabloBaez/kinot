@@ -17,12 +17,12 @@ function MainSlider ({list}) {
       getSelection();
     },[list]) 
 
-/*     useEffect(() => {
+    useEffect(() => {
       const interval = setInterval(() => {
         setCurrent(current === featured.length - 1 ? 0 : current + 1)
       },10000);
       return () => clearInterval(interval);
-    },[current, featured.length ]) */
+    },[current, featured.length ])
    
     const nextSlide = () => {
       setCurrent( current === featured.length - 1 ? 0 : current + 1);
@@ -46,23 +46,20 @@ function MainSlider ({list}) {
       </button>
       {
         featured.map((film, index)=> {
-           /*  const slideImg = require("../images/" + film.Id + "frameA.jpg");   */ 
             return(
               <div className={index=== current ? 'slide active' : 'slide'} key={index}>
                 {index === current && (
                   <>
                   <Link to={`/film/${film.slug}`}>
-                  <div className="slide-text">
-                    <div className="slide-header">
-                      <h1>{film.title}</h1>
-                      <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
+                    <div className="slide-text">
+                      <div className="slide-header">
+                        <h1>{film.title}</h1>
+                        <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
+                      </div>
+                      <p className="slide-synopsis">{film.synopsis}</p>
                     </div>
-                    <p className="slide-synopsis">{film.synopsis}</p>
-                  </div>
                   </Link>
-                  
-                    <FilmGallery film={film} /> 
-                  
+                  <FilmGallery film={film} /> 
                   </>
                 )}     
               </div>

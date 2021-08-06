@@ -20,7 +20,6 @@
 .videoTag {
     border-radius: 5px;
     object-fit: contain;
-    
     border: red;
 }
 .about-sub {
@@ -29,8 +28,7 @@
     margin-left: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 .about-sub h1 {
     font-size: 3.5em;
@@ -42,7 +40,6 @@
     max-width: 400px;
     margin-right: 2%;   
 }
-
 @media screen and (max-width: 650px), (aspect-ratio: 4/3) {
     .about-content {
         margin-bottom: 10%;

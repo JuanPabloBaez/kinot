@@ -3,12 +3,8 @@ import CrossfadeImage from "react-crossfade-image";
 import './filmGallery.css';
 
 
-
-
 function FilmGallery ({film}) { 
-    //const [current, setCurrent] = useState(0);
     const [images, setImages] = useState([]);
-
 
     function importAll(r) {
       return r.keys().map(r);
@@ -20,25 +16,20 @@ function FilmGallery ({film}) {
         function getImages () {
           const preImages = galleryFrames.filter(frame => frame.default.includes(film.Id + "frame"));
           setImages(preImages);
-          return;
-          
+          return;  
         }
         getImages();
-        
     },[film.Id]);
    
+    async function setOrder ()  {
+        const prev = [images.shift()];
 
-      
-      async function setOrder ()  {
-          const prev = [images.shift()];
-
-          const next = images.concat(prev);
-          
-           await setImages(next)
-        return
-        }
+        const next = images.concat(prev);
+        
+          await setImages(next)
+      return
+      }
     
-
      useEffect(() => {
         const interval = setInterval(() => {
           setOrder()
@@ -47,7 +38,6 @@ function FilmGallery ({film}) {
       },[images]); 
 
 
-      
     return (
         < div className="film-gallery-container">
            {images[0] && 

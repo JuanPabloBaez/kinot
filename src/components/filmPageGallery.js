@@ -6,7 +6,6 @@ function FilmPageGallery (film) {
     const [current, setCurrent] = useState(0);
     const [imagesSet, setImagesSet] = useState([]);
   
-
     function importAll(r) {
       return r.keys().map(r);
     }
@@ -19,29 +18,23 @@ function FilmPageGallery (film) {
           setImagesSet(preImages);
           return
         }
-        getImages();
-        
+        getImages();  
     },[film.Id]);
 
-
-
-      useEffect(() => {
+    useEffect(() => {
       const interval = setInterval(() => {
         setCurrent(current === imagesSet.length - 1 ? 0 : current + 1)
       },5000);
       return () => clearInterval(interval);
     },[current, imagesSet.length ]) 
    
-    
-    
+
     const nextSlide = () => {
       setCurrent( current === imagesSet.length - 1 ? 0 : current + 1);
     };
     const prevSlide = () => {
       setCurrent( current === 0 ? imagesSet.length - 1 : current - 1);
     }
-    
-    
     
  
   return (
@@ -58,15 +51,10 @@ function FilmPageGallery (film) {
       </button>
       {
         imagesSet.map((image, index)=> {
-           
             return(
               <div className={index=== current ? 'page-slide active' : 'page-slide'} key={index}>
                 {index === current && (
-                  <>
-                  
                   <img src={image.default} alt={`backstage from ${film.title}`} />
-                  
-                  </>
                 )}     
               </div>
             ) 

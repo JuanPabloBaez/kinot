@@ -3,12 +3,10 @@ import MainSlider from "./mainSlide";
 import SubSliderA from "./subSlideA";
 import SubSliderB from "./subSlideB";
 import SubSliderC from "./subSlideC";
-
 import './main.css';
 
 
 const Main = ({list }) => {
-    //const [isLoading, setIsloading] = useState(true);
     const [listB, setListB] = useState([]);
     const [listC, setListC] = useState([]);
 
@@ -16,12 +14,10 @@ const Main = ({list }) => {
         function getListB () {
             const documentary = list.filter(film => film.categorie.includes("Documentary"));
             setListB(documentary);
-            
             return
         }; 
         getListB();
-        
-        }, [list]);
+    }, [list]);
 
     useEffect(() =>{
         function getListC () {
@@ -30,28 +26,22 @@ const Main = ({list }) => {
             return
         }; 
         getListC();
-        }, [list]);
+    }, [list]);
 
 
-    
     return( 
-        <>
-            <div className="main-body">
-                <div className="main-wrap">  
-                    <MainSlider list={list} />
-                    <p className="slide-tag">most recent</p>
-                    <SubSliderA list={list}  />
-                    <p className="slide-tag">documentary</p>
-                    <SubSliderB listB={listB}/>
-                    <p className="slide-tag">shortfilm</p>
-                    <SubSliderC listC={listC}/> 
-                </div>       
-            </div>
-         </> 
-        
-       
+        <div className="main-body">
+            <div className="main-wrap">  
+                <MainSlider list={list} />
+                <p className="slide-tag">most recent</p>
+                <SubSliderA list={list}  />
+                <p className="slide-tag">documentary</p>
+                <SubSliderB listB={listB}/>
+                <p className="slide-tag">shortfilm</p>
+                <SubSliderC listC={listC}/> 
+            </div>       
+        </div>   
     )
-    
 }
 
 
