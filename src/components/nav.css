@@ -3,8 +3,10 @@
     display: flex;
     padding: 20px;
     height: 8vh;
-    width: 100%;
+    width: 95%;
+    max-width: 1200px;
     align-items: center;
+    margin: 0 auto;
 }
 .link-panel {
     width: auto;
@@ -27,7 +29,7 @@
     height: 5vh;
     border: 1px solid red;
     width: 5vh;
-    margin: 0 auto 0 10%;
+    margin-right: auto;
 }
 @media screen and (min-width: 650px), (aspect-ratio: 4/3) { 
     .link-panel {
