@@ -10,39 +10,41 @@
     display: flex;
     flex-direction: column;
     background-color: black;
+    align-items: center;
+}
+.filter-container{
+    width: 90%;
+    margin: 3% auto;
+    color: white;
+}
+.filter-container input{
+    width: 100%;
+    max-width: 500px;
+    margin-left: 1%;
+    border-radius: 5px;
 }
 
 .main-list {
     width: 90%;
-    max-width: 1060px;
+    max-width: 950px;
     height: fit-content;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 2% auto;
-    justify-content: left;
     
+    gap: 15px;
+    border: 1px solid yellow;
+    
+}
+.main-list::after {
+    content: "";
+    flex: auto;
 }
 
-.catalog-card-container {
-    margin: 1%;
-    height: fit-content;
-    position: relative;
-    
-}
+/* .catalog-card-container {
+        
+} */
 
-.catalog-label {
-    position: absolute;
-    left: -20%;
-    height: 30vh;
-    width: 40vh;
-    background-color: hsla(0, 0%, 0%, 0.6);
-    opacity: 0;
-    
-    transition: opacity 0.3s;
-    z-index: 1;
-    
-}
-.catalog-label:hover {
-    opacity: 1;
-}
+
+
+
