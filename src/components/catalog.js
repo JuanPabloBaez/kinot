@@ -15,10 +15,6 @@ const Catalog = ({list}) => {
         setFilter(e.target.value)
         };
 
-   
-        
-   
-    
 
     useEffect(()=>{
         function setupList () {
@@ -29,15 +25,11 @@ const Catalog = ({list}) => {
         setupList();    
     },[filter])
     
-    
-      
-    
-
 
     return(
         <div className="catalog-body">
             <div className="filter-container">
-                <label for="searchInput">search:</label> 
+                <label htmlFor="searchInput">search:</label> 
                 <input type="text" name="searchInput" value={filter} onChange={handleChange} placeholder=" title or director" />
                 <div className="">
                     {list.find(film => console.log(film.categorie))}

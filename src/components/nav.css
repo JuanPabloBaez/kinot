@@ -1,23 +1,20 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .nav-bar {
     
     display: flex;
     padding: 20px;
     height: 8vh;
-    
+    width: 100%;
     align-items: center;
 }
 
 .link-panel {
-    width: 35%;
+    width: auto;
+    
     display: flex;
-    justify-content: space-between;
-    margin: 0 5% 0 auto;
+    justify-content: flex-end;
+    
    
 }
 
@@ -26,8 +23,8 @@
     color: currentColor;
     border: 1.5px solid black;
     border-radius: 5px;
-    padding: 1%;
-    margin: 1%;
+    padding: 2%;
+    margin: 3%;
     font-size: 1.1em;
 }
 .search-icon{
@@ -43,7 +40,7 @@
 
 @media screen and (min-width: 650px), (aspect-ratio: 4/3) { 
     .link-panel {
-        width: 20%;
-        justify-content: space-around;       
+        width: auto;
+        margin-left: 1%;    
     }
 }
