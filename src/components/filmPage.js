@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+import FilmGallery from "./filmGallery";
 import Popup from "./filmPagePopUp";
 import FilmPageGallery from "./filmPageGallery"
 import './filmPage.css';
 
 
 const FilmPage = (list) => {
- 
+  const [videoPlayer, setVideoPlayer] = useState(false)
   const [popupA, setPopupA] = useState(false);
   const [popupB, setPopupB] = useState(false);
   const [popupC, setPopupC] = useState(false);
@@ -100,32 +101,58 @@ const FilmPage = (list) => {
   return (
     <div className="page-body">      
       
-      {video_link_serie.length <= 1 && 
+      { videoPlayer===false ? 
+      <div className="pre-Player">
+        <button className="pressPlayer" onClick={() => setVideoPlayer(true)}>
+          <svg id="i-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+            <path d="M10 2 L10 30 24 16 Z" />
+          </svg>
+          Watch Film
+        </button>
+        <FilmGallery film={film}/>
+      </div> 
+    :
+    <>
+        {video_link_serie.length <= 1 && 
           <ReactPlayer 
           className="page-video"
           url={video_link}
           controls={true}
+          playing={true}
           responsive="true"
           width="100%"
           height="50vh"
-             /> 
-      }
+            /> 
+        }
+        {video_link_serie.length > 1 && 
+          
+            <ReactPlayer 
+            className="page-video"
+            url={episode}
+            controls={true}
+            playing={true}
+            responsive="true"
+            width="100%"
+            height="50vh"
+              />
+        }
+      </>    
+    }
+      
+
+
+
+
+      
+
+
       {video_link_serie.length > 1 && 
-        <div className="serie-player"> 
-          <ReactPlayer 
-          className="page-video"
-          url={episode}
-          controls={true}
-          responsive="true"
-          width="100%"
-          height="50vh"
-             /> 
+        <div className="serie-player">
           <p>still serie</p>
           {video_link_serie.map((ep, index) =>{ return <button key={index}>Episode{index + 1}</button>})}
         </div>
       }
          
-
 
       <div className="page-first">
      
@@ -183,6 +210,7 @@ const FilmPage = (list) => {
                   className="page-video"
                   url={trailer_link}
                   controls={true}
+                  playing={true}
                   responsive="true"
                   width="100%"
                   height="60vh"
@@ -217,6 +245,7 @@ const FilmPage = (list) => {
                 className="page-video"
                 url={making_Of}
                 controls={true}
+                playing={true}
                 responsive="true"
                 width="100%"
                 height="60vh"

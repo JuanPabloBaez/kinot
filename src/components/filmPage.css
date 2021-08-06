@@ -5,6 +5,32 @@
     margin: 0 auto;
     padding-top: 2%;   
 }
+.pre-player {
+    height: inherit;
+    display: flex;
+    
+    position: relative;
+    
+}
+.pressPlayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 36%;
+    left: 46%;
+    
+    color: whitesmoke;
+    border-radius: 10%;
+    border: none;
+    height: 14vh;
+    width: 14vh;
+    background-color: hsla(0, 0%, 80%, 0.3);
+    
+}
+
 .page-video {    
     object-fit: contain;    
 }
@@ -160,10 +186,11 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .popup-inner {
