@@ -76,7 +76,7 @@ const FilmPage = (list) => {
     <div className="page-body">      
       
       { videoPlayer===false ? 
-        <div className="pre-Player">
+        <div className="pre-player">
           <button className="pressPlayer" onClick={() => setVideoPlayer(true)}>
             <svg id="i-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
               <path d="M10 2 L10 30 24 16 Z" />

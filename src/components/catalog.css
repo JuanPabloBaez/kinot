@@ -2,7 +2,7 @@
 
 .catalog-body{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: black;
@@ -16,27 +16,27 @@
 }
 .filter-container input{
     width: 100%;
-    max-width: 500px;
+    max-width: 350px;
     margin-left: 1%;
     border-radius: 5px;
 }
 
 .main-list {
-    width: 90%;
-    max-width: 950px;
+    width: 95%;
+    max-width: 830px;
     height: fit-content;
-    margin: 0 auto;
+   
     display: flex;
     flex-wrap: wrap;
     
     gap: 15px;
-    border: 1px solid yellow;
+  
     
 }
-.main-list::after {
+/* .main-list::after {
     content: "";
     flex: auto;
-}
+} */
 
 /* .catalog-card-container {
         

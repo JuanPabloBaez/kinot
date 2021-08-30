@@ -1,39 +1,50 @@
 
 .nav-bar {
     display: flex;
-    padding: 20px;
-    height: 8vh;
-    width: 95%;
-    max-width: 1200px;
+    height: 10vh ;
+    width: 100%;
     align-items: center;
-    margin: 0 auto;
+    justify-content: space-around;
+    background-color: maroon;
+    z-index: 1;
+    gap: 2%;
+    color: white;
+}
+.logo-link{
+    max-width: 40%;
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+.logo {
+    width: 100%;
+    height: 7vh;
+    object-fit: contain;
+    
+   
 }
 .link-panel {
-    width: auto;
+    width: fit-content;
     display: flex;
     justify-content: flex-end;
+    height: fit-content;
+    flex-wrap: nowrap;
+    
 }
 .link-panel a {
     text-decoration: none;
     color: currentColor;
-    border: 1.5px solid black;
+    border: 1.7px solid white;
     border-radius: 5px;
-    padding: 2%;
-    margin: 3%;
-    font-size: 1.1em;
+    padding: 1.5%;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    
 }
 .search-icon{
     height: 2.5vh;
+    color: white;
 }
-.logo {
-    height: 5vh;
-    border: 1px solid red;
-    width: 5vh;
-    margin-right: auto;
-}
-@media screen and (min-width: 650px), (aspect-ratio: 4/3) { 
-    .link-panel {
-        width: auto;
-        margin-left: 1%;    
-    }
-}
+
+

@@ -32,7 +32,7 @@ const Catalog = ({list}) => {
                 <label htmlFor="searchInput">search:</label> 
                 <input type="text" name="searchInput" value={filter} onChange={handleChange} placeholder=" title or director" />
                 <div className="">
-                    {list.find(film => console.log(film.categorie))}
+                    
                 </div>
                
             </div>

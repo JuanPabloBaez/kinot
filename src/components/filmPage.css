@@ -6,20 +6,23 @@
     padding-top: 2%;   
 }
 .pre-player {
-    height: inherit;
+    height: 50vh;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
     
-    position: relative;  
 }
+
 .pressPlayer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2%;
     position: absolute;
     z-index: 1;
-    top: 36%;
-    left: 46%;
     color: whitesmoke;
     border-radius: 10%;
     border: none;
@@ -33,7 +36,7 @@
 .page-first {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2%; 
+    margin: 2% 0; 
 }
 .page-poster {
     height: 35vh;
@@ -102,6 +105,7 @@
 .cast {
     margin: 2%;
 }
+
 .cast h2 {
     margin: 1%;
 }
@@ -114,6 +118,9 @@
     margin: 0.8% 0;
     list-style: none;
 }
+.cast-list > a:hover{
+    text-decoration: solid;
+}
 .media {
     width: fit-content;
     height: inherit;
@@ -122,7 +129,7 @@
     justify-content: center;
     width: 30%; 
 }
-@media screen and (max-width: 650px), (aspect-ratio: 4/3){
+@media screen and (max-width: 650px) {
     .page-second {
         flex-direction: column-reverse;
     }
