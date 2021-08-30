@@ -25,6 +25,7 @@
 }
 .link-panel {
     width: fit-content;
+    max-width: 60%;
     display: flex;
     justify-content: flex-end;
     height: fit-content;
@@ -34,7 +35,7 @@
 .link-panel a {
     text-decoration: none;
     color: currentColor;
-    border: 1.7px solid white;
+    border: 2px solid white;
     border-radius: 5px;
     padding: 1.5%;
     margin: 2%;
@@ -42,8 +43,8 @@
     align-items: center;
     
 }
-.search-icon{
-    height: 2.5vh;
+#i-search {
+    height: 80%;
     color: white;
 }
 

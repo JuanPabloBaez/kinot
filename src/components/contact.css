@@ -5,13 +5,14 @@
     margin: 0 auto;
     padding-top: 6vh;   
 }
-.form-body {  
+.form-body { 
+    width: 90%; 
     max-width: 600px;
-    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin: 2% auto;
-    justify-content: center;
+    
+   justify-content: flex-end;
     padding: 2%;     
 }
 .form-body input  {
@@ -42,14 +43,17 @@
 }
 .social-icon {
     width: 100%;
-    height: 100%;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
     position: relative;
     background-color: black;
-    margin-top: auto;    
+    margin-top: auto;
+    margin-bottom: 0;
+    
+       
 }
 .icon {    
     height: 10vh;

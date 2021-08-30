@@ -16,6 +16,7 @@
     font-size: 1.2em;
     font-weight: 300;  
     text-align: justify;
+    height: 65vh;
 }
 .videoTag {
     border-radius: 5px;
@@ -31,30 +32,46 @@
     justify-content: center;  
 }
 .about-sub h1 {
-    font-size: 3.5em;
+    font-size: 3.2em;
     font-weight: 300;
     font-style: oblique;
     margin-left: 5%;
 }
 .about-textB{
     max-width: 400px;
-    margin-right: 2%;   
+    height: inherit;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
 }
 @media screen and (max-width: 650px), (aspect-ratio: 4/3) {
     .about-content {
         margin-bottom: 10%;
         position: relative;
-        width: 100%;  
+        width: 100%;
+        max-width: 450px;
+        height: 75vh;
     }
     .about-sub {
         position: absolute;
         background-color: hsla(0, 0%, 100%, 0.5);
-        margin: 5% 0;
-        padding: 10px;
+        height: 100%;
+        max-width: 100%;
+        padding: 0 4%;
+        margin: 0;       
     }
     .about-textB {
         position: absolute;
         background-color: hsla(0, 0%, 100%, 0.5);
-        margin: 5% 0;    
+        height: 100%;
+        max-width: 100%;
+        padding: 0 4%;
+        margin: 0; 
+    }
+    .videoTag{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
