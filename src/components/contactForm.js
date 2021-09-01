@@ -1,44 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
-  const [status, setStatus] = useState("Submit");
   
-  const handleSubmit = async (e) => {
+  function sendEmail(e) {
     e.preventDefault();
-    setStatus("Sending...");
 
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    let response = await fetch("http://localhost:8000", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
-  };
+    emailjs.sendForm('service_psfwpap', 'contact-form-beatkino', e.target, 'user_UQ4ajvyGl91jhvnTxqIut')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+  }
+  
   return (
-    <form onSubmit={handleSubmit} className="form-body" >
+    <form  className="form-body" onSubmit={sendEmail} >
+        <input type="hidden" name="contact_number"  />
       <div className="form-name">
         <label htmlFor="name">Name:</label>
-        <input type="text" id="name" required />
+        <input type="text" id="name" name="from_name" required />
       </div>
+      
       <div className="form-mail">
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" required />
+        <input type="email" id="email" name="from_email" required />
       </div>
+      
       <div className="form-message">
         <label htmlFor="message">Message:</label>
-        <textarea id="message" required />
+        <textarea id="message" name="message" required />
       </div>
-      <button type="submit">{status}</button>
+      <button type="submit">Send</button>
     </form>
   );
 };
