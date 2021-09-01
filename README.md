@@ -8,6 +8,5 @@ Express
 MongoDb
 
 
-Search icon made by Smashicons https://www.flaticon.com/authors/smashicons 
-All  other icons made by dan klammer https://danklammer.com/bytesize-icons/
+icons by dan klammer https://danklammer.com/bytesize-icons/
  
