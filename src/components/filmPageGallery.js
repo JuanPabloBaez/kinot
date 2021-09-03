@@ -59,7 +59,7 @@ function FilmPageGallery (film) {
               </div>
             ) 
           }       
-        ).reverse()
+        )
       }
     </section>
   )

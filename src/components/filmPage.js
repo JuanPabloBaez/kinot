@@ -117,9 +117,7 @@ const FilmPage = (list) => {
       }
       </>    
     }
-
-     
-         
+    
 
       <div className="page-first">
         <img className='page-poster' 

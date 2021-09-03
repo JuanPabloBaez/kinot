@@ -13,7 +13,6 @@ const Card = ({ film }) => {
             />       
         </div>
     )
-    
 }
 
 export default Card;

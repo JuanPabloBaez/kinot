@@ -11,10 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; 
-    
+    position: relative;     
 }
-
 .pressPlayer {
     display: flex;
     flex-direction: column;

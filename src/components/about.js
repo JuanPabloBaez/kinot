@@ -6,7 +6,6 @@ import './about.css';
 const About = () => { 
     window.scrollTo(0, 0);
     
-    
     return(
         <div className="about-body">
             <div className="about-content">

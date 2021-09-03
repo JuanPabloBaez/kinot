@@ -1,5 +1,3 @@
-
-
 .catalog-body{
     width: 100%;
     height: 100vh;
@@ -20,7 +18,6 @@
     margin-left: 1%;
     border-radius: 5px;
 }
-
 .main-list {
     width: 95%;
     max-width: 830px;
@@ -28,19 +25,6 @@
     display: flex;
     flex-wrap: wrap;
     overflow: scroll;
-    gap: 15px;
-  
-    
+    gap: 15px;    
 }
-/* .main-list::after {
-    content: "";
-    flex: auto;
-} */
-
-/* .catalog-card-container {
-        
-} */
-
-
-
 

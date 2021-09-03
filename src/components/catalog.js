@@ -9,8 +9,6 @@ const Catalog = ({list}) => {
     const [catalogList, setCatalogList] = useState(list)
 
    
-    
-
     const handleChange = (e) => {
         setFilter(e.target.value)
         };
@@ -31,15 +29,9 @@ const Catalog = ({list}) => {
             <div className="filter-container">
                 <label htmlFor="searchInput">search:</label> 
                 <input type="text" name="searchInput" value={filter} onChange={handleChange} placeholder=" title or director" />
-                <div className="">
-                    
-                </div>
-               
             </div>
 
             <div className="main-list">
-           
-           
             {
                 catalogList.map((film, index) => {
                     if (film.active === true) {
