@@ -7,6 +7,7 @@
     align-items: center;
     margin: 2% auto;
     width: 94%;
+    max-width: 800px;
        
 }
 .slide a {
@@ -83,7 +84,7 @@
     h1 {
         font-size: 1.2em;
     }
-    p {
+    .slide-text p {
         font-size: .8em;
     }
     .slide-header h1 {

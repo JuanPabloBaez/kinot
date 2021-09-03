@@ -40,7 +40,7 @@
 .about-textB{
     max-width: 400px;
     height: inherit;
-    margin-left: 2%;
+    margin-right: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;    

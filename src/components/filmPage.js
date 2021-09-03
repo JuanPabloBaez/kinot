@@ -110,15 +110,15 @@ const FilmPage = (list) => {
             height="50vh"
               />
         }
-      </>    
-    }
-
-      {video_link_serie.length > 1 && 
+         {video_link_serie.length > 1 && 
         <div className="serie-player">
-          <p>still serie</p>
           {video_link_serie.map((ep, index) =>{ return <button key={index}>Episode{index + 1}</button>})}
         </div>
       }
+      </>    
+    }
+
+     
          
 
       <div className="page-first">
@@ -130,7 +130,7 @@ const FilmPage = (list) => {
         <div className="page-header-container"> 
           <div className="page-header">
             <h1>{title}</h1>
-            <p className="page-info"> {year} / {country} / {runtime} minutes. / {language} ({subtitle}) / {format} </p>
+            <div className="page-info"><p > {year} / {country} / {runtime} minutes. / {language}  </p> { subtitle && <p>(sub: {subtitle})</p>} <p> / {format} </p></div>
           </div>
           <p className="page-synopsis">{synopsis}</p>
         </div>

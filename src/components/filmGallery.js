@@ -23,9 +23,7 @@ function FilmGallery ({film}) {
    
     async function setOrder ()  {
         const prev = [images.shift()];
-
-        const next = images.concat(prev);
-        
+        const next = images.concat(prev);    
           await setImages(next)
       return
       }

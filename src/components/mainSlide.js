@@ -56,7 +56,7 @@ function MainSlider ({list}) {
                         <h1>{film.title}</h1>
                         <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
                       </div>
-                      <p className="slide-synopsis">{film.synopsis}</p>
+                      <p className="slide-synopsis">{film.log_line}</p>
                     </div>
                   </Link>
                   <FilmGallery film={film} /> 
