@@ -52,12 +52,13 @@ const FilmPage = (list) => {
       try { 
         require("../images/" + Id + "setA.jpg");        
         setSetImg(true)
+        
       } catch(error) {
         setSetImg(false)
       }
     } 
     getImg();
-  },[ ]);
+  },[Id]);
   
 
     useEffect(() =>{
@@ -67,7 +68,7 @@ const FilmPage = (list) => {
         return
       }
     getEpisode();
-    },[])
+    },[video_link_serie])
 
 
   const pagePoster = require("../images/" + Id + "poster.jpg");

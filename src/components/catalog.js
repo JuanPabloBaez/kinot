@@ -21,7 +21,7 @@ const Catalog = ({list}) => {
             return
         }
         setupList();    
-    },[filter])
+    },[filter]) // eslint-disable-line react-hooks/exhaustive-deps
     
 
     return(

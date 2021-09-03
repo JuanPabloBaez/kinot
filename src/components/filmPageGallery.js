@@ -19,7 +19,7 @@ function FilmPageGallery (film) {
           return
         }
         getImages();  
-    },[film.Id]);
+    },[film.film.Id]);  // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
       const interval = setInterval(() => {

@@ -19,7 +19,7 @@ function FilmGallery ({film}) {
           return;  
         }
         getImages();
-    },[film.Id]);
+    },[film.Id]); // eslint-disable-line react-hooks/exhaustive-deps
    
     async function setOrder ()  {
         const prev = [images.shift()];
@@ -33,7 +33,7 @@ function FilmGallery ({film}) {
           setOrder()
         },2500);
         return () => clearInterval(interval);
-      },[images]); 
+      },[images]); // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (
