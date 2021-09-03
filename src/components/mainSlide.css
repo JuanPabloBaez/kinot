@@ -115,15 +115,22 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    justify-content: space-evenly;
+    justify-content:space-around;
     position: absolute;
     padding: 5%;
     height: 102%;
     width: 102%;
-    background-color: hsla(0, 0%, 0%, 0.6);
+    background-color: hsla(0, 0%, 0%, 0.7);
     opacity: 0;
     transition: opacity 0.3s;
-    text-align: center;  
+    text-align: center;
+    font-size: 0.9em;  
+}
+.card-overlay h2 {
+    font-size: 1.3em;
+}
+.card-overlay i {
+    margin-top: 0;
 }
 .sub-card-container a {
     color: currentColor; 
