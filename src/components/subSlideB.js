@@ -26,11 +26,15 @@ import Card from "./Card";
               return(
                 <div className="sub-card-container" key={index}>
                 <Link to={`/film/${film.slug}`}>
-                  <div className="card-overlay"> 
-                    <h5>{film.title}</h5>
-                    <p>{film.runtime} min.</p>
-                    <p>{film.country}</p>
-                  </div> 
+                <div className="card-overlay"> 
+                    <div>
+                      <h2>{film.title}</h2>
+                      {film.categorie[0] === "" ? null : <i>{film.categorie}</i> }
+                    </div>
+                    
+                    <p>{film.runtime} min. / {film.country}</p>
+                    
+                  </div>
                   <Card film={film}   />
                 </Link>
               </div>)} return null
