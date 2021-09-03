@@ -8,7 +8,7 @@ const Catalog = ({list}) => {
     const [filter, setFilter] = useState('');
     const [catalogList, setCatalogList] = useState(list)
 
-    const allCategories = ['All', ...list.map(item => item.categorie)];
+   
     
 
     const handleChange = (e) => {

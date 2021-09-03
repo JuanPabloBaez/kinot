@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Logo from "../assets/logo-white.svg"
-import Search from "../assets/search.png";  //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 import  "./nav.css";
 
 const NavBar = () => {  
