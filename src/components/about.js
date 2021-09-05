@@ -9,7 +9,7 @@ const About = () => {
     return(
         <div className="about-body">
             <div className="about-content">
-                <video className='videoTag' autoPlay loop muted>
+                <video className='videoTag' autoPlay="autoplay" loop="loop" muted  playsInline>
                     <source src={About1} type='video/mp4' />
                 </video>
                 <div className="about-sub">
@@ -19,7 +19,7 @@ const About = () => {
             </div>
             <div className="about-content">
                 <p className='about-textB'> It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. </p>
-                <video className='videoTag' autoPlay loop muted>
+                <video className='videoTag' autoPlay="autoplay" loop="loop" muted  playsInline>
                     <source src={About2} type='video/mp4' />
                 </video>
             </div>

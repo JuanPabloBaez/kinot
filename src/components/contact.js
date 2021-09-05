@@ -10,7 +10,7 @@ const Contact = () => {
             <ContactForm />
             <div className="social-icon">
                 <p>also on</p>
-                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" > <img className='icon' alt="instagram icon" src={InstaIcon}/> </a>             
+                <a href="https://www.instagram.com/beatkino" target="_blank" rel="noreferrer" > <img className='icon' alt="instagram icon" src={InstaIcon}/> </a>             
             </div>
         </>  
     )
