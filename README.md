@@ -2,6 +2,7 @@ beatkino.com
 
 Film stream application.
 
+BETA version: https://beatkino-beta.netlify.app/#/
 
 Tech stack:
 
