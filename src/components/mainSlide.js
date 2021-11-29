@@ -15,7 +15,9 @@ function MainSlider ({list}) {
         return
       };  
       getSelection();
-    },[list]) 
+    },[list]);
+    
+    
 
     useEffect(() => {
       const interval = setInterval(() => {
@@ -35,17 +37,20 @@ function MainSlider ({list}) {
   return (
     <section className='main-slider'>
       <button className="left-arrow" onClick={prevSlide}>
-        <svg id="i-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="7">
+        <svg id="i-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
           <path d="M10 6 L2 16 10 26 M2 16 L30 16" />
         </svg>
       </button>
       <button className="right-arrow" onClick={nextSlide}>
-        <svg id="i-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="7">
+        <svg id="i-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
           <path d="M22 6 L30 16 22 26 M30 16 L2 16" />
         </svg>
       </button>
       {
         featured.map((film, index)=> {
+          const filmFrame = require("../images/" + film.Id + "frameA.jpg");
+          
+
             return(
               <div className={index=== current ? 'slide active' : 'slide'} key={index}>
                 {index === current && (
@@ -59,7 +64,11 @@ function MainSlider ({list}) {
                       <p className="slide-synopsis">{film.log_line}</p>
                     </div>
                   </Link>
-                  <FilmGallery film={film} /> 
+                  <img className='page-poster' 
+                  src={filmFrame.default}
+                  alt={film.title}
+                  title={film.title}
+                  /> 
                   </>
                 )}     
               </div>
