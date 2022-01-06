@@ -15,12 +15,48 @@
     display: flex;
     align-items: center;
     height: inherit;
+    text-decoration: none;
+    color: currentColor;
+    
 }
 .logo {
-    width: 100%;
-    height: 7vh;
-    object-fit: contain;
+    font-family: 'Major Mono Display', monospace;
+    border: 2px solid ;
+    padding: 3px;
+    border-radius: 5%;
+    font-size: 2.6em;
+
+    animation-name: borderColor;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
 }
+
+@keyframes borderColor {
+	0% {
+        border-color: #ee6055;
+        box-shadow: 2px 2px 2px 1px #ee6055, -2px -2px 2px 1px #ee6055 ;
+    }
+	25% {
+		border-color: #60d394;
+        box-shadow: 2px 2px 2px 1px #60d394, -2px -2px 2px 1px #60d394 ;
+	}
+	50% {
+		border-color: #aaf683;
+        box-shadow: 2px 2px 2px 1px #aaf683, -2px -2px 2px 1px #aaf683 ;
+	}
+	75% {
+		border-color: #ffd97d;
+        box-shadow: 2px 2px 2px 1px #ffd97d, -2px -2px 2px 1p#ffd97d ;
+	}
+	100% {
+		border-color: #ff9b85;
+        box-shadow: 2px 2px 2px 1px #ff9b85, -2px -2px 2px 1px #ff9b85 ;
+
+	}
+}
+
 .link-panel {
     width: fit-content;
     min-width: 40%;

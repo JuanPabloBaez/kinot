@@ -7,7 +7,7 @@ const NavBar = () => {
     return(
         <div className="nav-bar">
             
-                <Link to="/" className="logo-link"><img src={Logo} className="logo" alt="beatkino logo" /></Link>
+                <Link to="/" className="logo-link"><h1 className="logo">beAtKinO</h1></Link>
             
             <div className="link-panel">
                 <Link to="/catalog">
