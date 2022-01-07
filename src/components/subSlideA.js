@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import {Link} from "react-router-dom";
+
 import "./mainSlide.css";
 import Card from "./Card";
 
@@ -26,20 +26,8 @@ import Card from "./Card";
           list.map((film, index) => {          
             if (film.active === true) {
               return(
-              <div className="sub-card-container" key={index}>
-                <Link to={`/film/${film.slug}`}>
-                  <div className="card-overlay"> 
-                    <div>
-                      <h2>{film.title}</h2>
-                      {film.categorie[0] === "" ? null : <i>{film.categorie}</i> }
-                    </div>
-                    
-                    <p>{film.runtime} min. / {film.country}</p>
-                    
-                  </div> 
-                  <Card film={film}   />
-                </Link>
-              </div>)
+                <Card film={film} key={index}   />
+              )
             } return null
           }).reverse() 
         } 

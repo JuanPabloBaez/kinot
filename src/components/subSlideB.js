@@ -24,20 +24,8 @@ import Card from "./Card";
           listB.map((film, index) => {          
             if (film.active === true) {
               return(
-                <div className="sub-card-container" key={index}>
-                <Link to={`/film/${film.slug}`}>
-                <div className="card-overlay"> 
-                    <div>
-                      <h2>{film.title}</h2>
-                      {film.categorie[0] === "" ? null : <i>{film.categorie}</i> }
-                    </div>
-                    
-                    <p>{film.runtime} min. / {film.country}</p>
-                    
-                  </div>
-                  <Card film={film}   />
-                </Link>
-              </div>)} return null
+                <Card film={film} key={index}   />
+              )} return null
           }).reverse() 
         }        
         <button className="subSlide-button button-next" onClick={handleNext}>
