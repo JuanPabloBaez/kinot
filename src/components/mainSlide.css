@@ -107,7 +107,8 @@
     overflow-x: scroll;
     overflow-y: hidden;
     border-top: 2px solid white;
-    scroll-behavior: smooth;  
+    scroll-behavior: smooth; 
+    padding-top: .5%; 
 } 
 
 .subSlide-button {
@@ -123,7 +124,7 @@
 .button-prev  {
     left: 0;
     position: sticky;
-    margin-right: -4%;
+    margin-right: -7%;
      
 }
 .button-next{

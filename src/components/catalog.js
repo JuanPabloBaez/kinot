@@ -10,7 +10,7 @@ const Catalog = ({list}) => {
     const [catalogList, setCatalogList] = useState(list);
     //const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(6);
+    const [postsPerPage] = useState(10);
 
    
     const handleChange = (e) => {
@@ -47,11 +47,9 @@ const Catalog = ({list}) => {
                 currentPosts.map((film, index) => {
                     if (film.active === true) {
                         return( 
-                            <div className="catalog-card-container" key={index}>
-                                <Link to={`/film/${film.slug}`}>
-                                <Card  film={film} />
-                                </Link>
-                           </div>
+                           
+                                <Card  film={film} key={index} />
+                                
                         )
                     } return null
                 }).reverse()                         
