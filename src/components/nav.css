@@ -62,7 +62,7 @@
 .link-panel {
     width: fit-content;
     min-width: 40%;
-    max-width: 60%;
+    max-width: 50%;
     display: flex;
     justify-content: flex-end;
     height: fit-content;
@@ -84,3 +84,16 @@
 }
 
 
+@media screen and (min-width: 650px), (aspect-ratio: 4/3) {
+
+    .logo {
+        font-size: 2.8em;
+        border: 3px solid ;
+    }
+ }
+ @media screen and (max-width: 400px), (aspect-ratio: 4/3) {
+
+    .logo {
+        font-size: 1.5em;
+    }
+ }
