@@ -19,3 +19,49 @@
   align-items: center;
   padding-left: 2%;
 }
+
+.loader {
+  font-family: 'Major Mono Display', monospace;
+  border: 2px solid;
+  padding: 3px;
+  border-radius: 5%;
+  font-size: 5em;
+  width: fit-content;
+  margin: auto;
+  margin-top:10%;
+  
+  animation-name: borderLoader;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear; 
+}
+
+@keyframes borderLoader {
+  0% {
+    color: #FF595E ;
+    border-color: #FF595E;
+    box-shadow: 2px 2px 2px 1px #FF595E, -2px -2px 2px 1px #FF595E ;
+  }
+  25% {
+      color: #FFCA3A;
+        border-color: #FFCA3A;
+      box-shadow: 2px 2px 2px 1px #FFCA3A, -2px -2px 2px 1px #FFCA3A ;
+  }
+  50% {
+    color: #8AC926;
+    border-color: #8AC926;
+    box-shadow: 2px 2px 2px 1px #8AC926, -2px -2px 2px 1px #8AC926 ;
+  }
+  75% {
+    color: #1982C4;
+    border-color: #1982C4;
+    box-shadow: 2px 2px 2px 1px #1982C4, -2px -2px 2px 1p#1982C4 ;
+  }
+  100% {
+    color: 6A4C93;
+    border-color: #6A4C93;
+    box-shadow: 2px 2px 2px 1px #6A4C93, -2px -2px 2px 1px #6A4C93 ;
+
+  }
+}

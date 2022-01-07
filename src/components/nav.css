@@ -29,7 +29,7 @@
     width: 100%;
 
     animation-name: borderColor;
-	animation-duration: 10s;
+	animation-duration: 12s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-timing-function: linear; 
@@ -37,24 +37,24 @@
 
 @keyframes borderColor {
 	0% {
-        border-color: #ee6055;
-        box-shadow: 2px 2px 2px 1px #ee6055, -2px -2px 2px 1px #ee6055 ;
+        border-color: #FF595E;
+        box-shadow: 2px 2px 2px 1px #FF595E, -2px -2px 2px 1px #FF595E ;
     }
 	25% {
-		border-color: #60d394;
-        box-shadow: 2px 2px 2px 1px #60d394, -2px -2px 2px 1px #60d394 ;
+		border-color: #FFCA3A;
+        box-shadow: 2px 2px 2px 1px #FFCA3A, -2px -2px 2px 1px #FFCA3A ;
 	}
 	50% {
-		border-color: #aaf683;
-        box-shadow: 2px 2px 2px 1px #aaf683, -2px -2px 2px 1px #aaf683 ;
+		border-color: #8AC926;
+        box-shadow: 2px 2px 2px 1px #8AC926, -2px -2px 2px 1px #8AC926 ;
 	}
 	75% {
-		border-color: #ffd97d;
-        box-shadow: 2px 2px 2px 1px #ffd97d, -2px -2px 2px 1p#ffd97d ;
+		border-color: #1982C4;
+        box-shadow: 2px 2px 2px 1px #1982C4, -2px -2px 2px 1p#1982C4 ;
 	}
 	100% {
-		border-color: #ff9b85;
-        box-shadow: 2px 2px 2px 1px #ff9b85, -2px -2px 2px 1px #ff9b85 ;
+		border-color: #6A4C93;
+        box-shadow: 2px 2px 2px 1px #6A4C93, -2px -2px 2px 1px #6A4C93 ;
 
 	}
 }
