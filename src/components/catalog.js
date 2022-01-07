@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import Card from "./Card";
+import Pagination from './pagination';
 //import FilterButton from "./catalogButton";
 import './catalog.css';
 
 const Catalog = ({list}) => {  
     const [filter, setFilter] = useState('');
-    const [catalogList, setCatalogList] = useState(list)
+    const [catalogList, setCatalogList] = useState(list);
+    //const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(6);
 
    
     const handleChange = (e) => {
@@ -23,6 +27,13 @@ const Catalog = ({list}) => {
         setupList();    
     },[filter]) // eslint-disable-line react-hooks/exhaustive-deps
     
+     // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = catalogList.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return(
         <div className="catalog-body">
@@ -33,7 +44,7 @@ const Catalog = ({list}) => {
 
             <div className="main-list">
             {
-                catalogList.map((film, index) => {
+                currentPosts.map((film, index) => {
                     if (film.active === true) {
                         return( 
                             <div className="catalog-card-container" key={index}>
@@ -46,6 +57,11 @@ const Catalog = ({list}) => {
                 }).reverse()                         
             }
             </div>
+            <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={catalogList.length}
+                paginate={paginate}
+            />
         </div> 
     )
 }

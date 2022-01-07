@@ -20,7 +20,7 @@
 }
 .main-list {
     width: 95%;
-    max-width: 830px;
+    
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
