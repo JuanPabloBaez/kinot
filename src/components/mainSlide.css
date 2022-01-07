@@ -6,8 +6,7 @@
     justify-content: center;
     align-items: center;
     margin: 2% auto;
-    width: 94%;
-    max-width: 800px;   
+      
 }
 .slide a {
     color: currentColor;
@@ -60,7 +59,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left:-9%;
+    left:-6%;
     z-index: 4;
     cursor: pointer;
     user-select: none;
@@ -74,7 +73,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right:-9%;
+    right:-6%;
     z-index: 4;
     cursor: pointer;
     user-select: none;
