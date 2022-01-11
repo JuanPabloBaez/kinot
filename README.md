@@ -7,6 +7,7 @@ BETA version: https://beatkino-beta.netlify.app/#/
 Tech stack:
 
 React
+Redux
 node.js
 Express
 MongoDb
