@@ -4,7 +4,7 @@ import Card from "./Card";
 
 
 
- function SubSliderA ({list }) {
+ function SubSliderA ({list}) {
     const slideRef = useRef(null);
     
 

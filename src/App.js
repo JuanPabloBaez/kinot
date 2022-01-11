@@ -26,7 +26,7 @@ function App() {
            axios.get('https://beatkino-server.herokuapp.com/api/films').then(
           (response) => {
             
-            setList(response);
+            setList(response.data);
             setIsloading(false);
             
             return;
