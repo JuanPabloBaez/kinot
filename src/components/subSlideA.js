@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
-
 import "./mainSlide.css";
 import Card from "./Card";
 
+
+
  function SubSliderA ({list }) {
-    
     const slideRef = useRef(null);
     
+
     function handlePrev (e) {
       slideRef.current.scrollLeft += -400; 
     }

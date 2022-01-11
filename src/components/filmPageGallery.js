@@ -54,7 +54,7 @@ function FilmPageGallery (film) {
             return(
               <div className={index=== current ? 'page-slide active' : 'page-slide'} key={index}>
                 {index === current && (
-                  <img src={image.default} alt={`backstage from ${film.title}`} />
+                  <img src={image.default} alt={`backstage from ${film.title_eng}`} />
                 )}     
               </div>
             ) 

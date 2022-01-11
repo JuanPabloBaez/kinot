@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from 'react-redux'
 import {Link} from "react-router-dom";
 import "./mainSlide.css";
 
@@ -6,6 +7,7 @@ import "./mainSlide.css";
 function MainSlider ({list}) {
     const [current, setCurrent] = useState(0);
     const [featured, setFeatured] = useState([]);
+    const lang = useSelector((state) => state.lang.value)
 
     useEffect(()=> {
       function getSelection () {
@@ -57,16 +59,17 @@ function MainSlider ({list}) {
                   <Link to={`/film/${film.slug}`}>
                     <div className="slide-text">
                       <div className="slide-header">
-                        <h1>{film.title}</h1>
+                        <h1>{lang === "eng" ? film.title_eng : film.title_esp}</h1>
+                        
                         <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
                       </div>
-                      <p className="slide-synopsis">{film.log_line}</p>
+                      <p className="slide-synopsis">{lang==="eng" ? film.log_line_eng: film.log_line_esp}</p>
                     </div>
                   </Link>
                   <img className='page-poster' 
                   src={filmFrame.default}
-                  alt={film.title}
-                  title={film.title}
+                  alt={film.title_eng}
+                  title={film.title_eng}
                   /> 
                   </>
                 )}     

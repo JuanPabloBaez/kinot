@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import axios from "axios";
+//import axios from "axios";
 import {
   HashRouter as Router,
   Switch,
@@ -18,14 +18,18 @@ import Catalog from './components/catalog';
 function App() {
   const [list, setList] = useState([]);
   const [isLoading, setIsloading] = useState(true);
+  //const [lang, setLang] = useState("eng")
 
   useEffect(() => {
     async function getList () {
       try {
-           axios.get('https://beatkino-server.herokuapp.com/api/films').then(
+          //  axios.get('https://beatkino-server.herokuapp.com/api/films').then(
+            fetch('http://localhost:8000/api/films').then(response => response.json()).then(
           (response) => {
-            setList(response.data);
+            
+            setList(response);
             setIsloading(false);
+            
             return;
           }
         )
@@ -34,19 +38,20 @@ function App() {
       }
     }
     getList();
+    
   },[])
-
+  
   return (
     <Router>
       <div className="App">
-        <NavBar/>
+        <NavBar />
         {isLoading ? (
           <h1 className="loader">bK</h1>
         ):(              
           <>
           <Switch>
             <Route exact path="/">               
-              <Main list={list} />                 
+              <Main list={list}  />                 
             </Route >
             <Route path="/film/:id">
               <FilmPage list={list} /> 

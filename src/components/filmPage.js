@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import { useSelector} from 'react-redux'
 import ReactPlayer from 'react-player';
 import FilmGallery from "./filmGallery";
 import Popup from "./filmPagePopUp";
@@ -14,20 +15,24 @@ const FilmPage = (list) => {
   const [popupB, setPopupB] = useState(false);
   const [popupC, setPopupC] = useState(false);
   const [episode, setEpisode] = useState("");
-  const [setImg, setSetImg] = useState(false)
+  const [setImg, setSetImg] = useState(false);
+  const lang = useSelector((state) => state.lang.value)
+
   const {id} = useParams();
   window.scrollTo(0, 0);
 
 
   const film = list.list.filter(item => item.slug === id)[0];
   const {
-    title,  
+    title_eng,
+    title_esp,    
     Id,
     video_link,
     video_link_serie,
     trailer_link,
     making_Of,
-    synopsis,       
+    synopsis_eng,
+    synopsis_esp,       
     director,
     writer,
     cast,
@@ -82,7 +87,7 @@ const FilmPage = (list) => {
             <svg id="i-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
               <path d="M10 2 L10 30 24 16 Z" />
             </svg>
-            Watch Film
+            {lang==="eng"? "Watch Film":"Ver Film"}
           </button>
           <FilmGallery film={film}/>
         </div> 
@@ -123,41 +128,41 @@ const FilmPage = (list) => {
       <div className="page-first">
         <img className='page-poster' 
                   src={pagePoster.default}
-                  alt={title}
-                  title={title}
+                  alt={title_eng}
+                  title={title_eng}
                   />
         <div className="page-header-container"> 
           <div className="page-header">
-            <h1>{title}</h1>
-            <div className="page-info"><p > {year} / {country} / {runtime} minutes. / {language}  </p> { subtitle && <p>(sub: {subtitle})</p>} <p> / {format} </p></div>
+            <h1>{lang==="eng" ? title_eng : title_esp}</h1>
+            <div className="page-info"><p > {year} / {country} / {runtime} {lang==="eng" ?"minutes":"minutos"}</p> {language && <p>/ {language}</p>}   { subtitle && <p>(sub: {subtitle})</p>} <p> / {format} </p></div>
           </div>
-          <p className="page-synopsis">{synopsis}</p>
+          <p className="page-synopsis">{lang==="eng" ?synopsis_eng:synopsis_esp}</p>
         </div>
       </div>
       
       
       <div className="page-second">
         <div className="cast">
-          <h2>Cast and Crew</h2>
+          <h2>{lang==="eng" ? "Cast and Crew": "Equipo" }</h2>
           <ul className="cast-list">
-            { director  && <li>Director:  {director}</li>}
-            { writer    && <li>Writer:    {writer}</li>}
-            { cast      && <li>Cast:      {cast}</li>}
+            { director  && <li>{lang==="eng"? "Director":"Dirección"}:  {director}</li>}
+            { writer    && <li>{lang==="eng"? "Writer":"Guion"}:    {writer}</li>}
+            { cast      && <li>{lang==="eng"? "Cast":"Elenco"}:      {cast}</li>}
             {(function() {
               if ( production && production_link !=="null" ) {
-                  return <li>Production: <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li> ;  
+                  return <li>{lang==="eng"?"Production":"Productora"}: <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li> ;  
               } if (production ==="") {
                   return null
               } else {
-                  return <li>Production:  {production}</li>;
+                  return <li>{lang==="eng"?"Production":"Productora"}:  {production}</li>;
               }
             })()}
-            { producer  && <li>Producer: {producer}</li>}
-            {cinematography && <li>Cinematography: {cinematography}</li>}
-            {editing    && <li>Editing:   {editing}</li>}
-            {sound      && <li>Sound:     {sound}</li>}
-            {vfx        && <li>Post production: {vfx}</li>}
-            {music      && <li>Music:     {music}</li>}
+            { producer  && <li>{lang==="eng"? "Production":"Producción"}: {producer}</li>}
+            {cinematography && <li>{lang==="eng"? "Cinematography":"Fotografía"}: {cinematography}</li>}
+            {editing    && <li>{lang==="eng"? "Editing":"Edición"}:   {editing}</li>}
+            {sound      && <li>{lang==="eng"? "Sound":"Sonido"}:     {sound}</li>}
+            {vfx        && <li>{lang==="eng"? "Post production":"Posproducción"}: {vfx}</li>}
+            {music      && <li>{lang==="eng"? "Music":"Música"}:     {music}</li>}
           </ul>
         </div>
         
@@ -167,7 +172,7 @@ const FilmPage = (list) => {
               <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
                 <path d="M22 13 L30 8 30 24 22 19 Z M2 8 L2 24 22 24 22 8 Z" />
               </svg>
-              <p>Watch trailer</p>
+              <p>{lang==="eng"? "Watch trailer":"Ver trailer"}</p>
             </button>
             <Popup trigger={popupA} setTrigger={setPopupA}>
                 <ReactPlayer 
@@ -188,7 +193,7 @@ const FilmPage = (list) => {
                 <path d="M20 24 L12 16 2 26 2 2 30 2 30 24 M16 20 L22 14 30 22 30 30 2 30 2 24" />
                 <circle cx="10" cy="9" r="3" />
               </svg>
-              <p>Photo gallery</p>
+              <p>{lang==="eng"? "Photo gallery":"Galería de imágenes"}</p>
             </button>
             <Popup trigger={popupB} setTrigger={setPopupB}>
               <FilmPageGallery film={film} />    
@@ -200,7 +205,7 @@ const FilmPage = (list) => {
             <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
               <path d="M22 13 L30 8 30 24 22 19 Z M2 8 L2 24 22 24 22 8 Z" />
             </svg>
-            <p>Watch making of</p>
+            <p>{lang==="eng"? "Watch making of":"Ver making of"}</p>
           </button>
           <Popup trigger={popupC} setTrigger={setPopupC}>
               <ReactPlayer 

@@ -1,8 +1,11 @@
 import React from "react";
 import emailjs from 'emailjs-com';
+import { useSelector} from 'react-redux'
+
 
 const ContactForm = () => {
-  
+  const lang = useSelector((state) => state.lang.value)
+
   function sendEmail(e) {
     e.preventDefault();
 
@@ -19,7 +22,7 @@ const ContactForm = () => {
     <form  className="form-body" onSubmit={sendEmail} >
         <input type="hidden" name="contact_number"  />
       <div className="form-name">
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">{lang==="eng" ?"Name":"Nombre"}:</label>
         <input type="text" id="name" name="from_name" required />
       </div>
       
@@ -29,7 +32,7 @@ const ContactForm = () => {
       </div>
       
       <div className="form-message">
-        <label htmlFor="message">Message:</label>
+        <label htmlFor="message">{lang==="eng" ?"Message":"Mensaje"}:</label>
         <textarea id="message" name="message" required />
       </div>
       <button type="submit">Send</button>

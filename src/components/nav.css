@@ -67,6 +67,7 @@
     justify-content: flex-end;
     height: fit-content;
     flex-wrap: nowrap;   
+    position: relative;
 }
 .link-panel a {
     text-decoration: none;
@@ -82,8 +83,13 @@
     height: 80%;
     color: white;
 }
-
-
+.lang {
+    background: none;
+    color: currentColor;
+    border: none;
+    
+    
+}
 @media screen and (min-width: 650px), (aspect-ratio: 4/3) {
 
     .logo {
@@ -91,9 +97,17 @@
         border: 3px solid ;
     }
  }
- @media screen and (max-width: 400px), (aspect-ratio: 4/3) {
+ @media screen and (max-width: 500px), (aspect-ratio: 4/3) {
 
     .logo {
-        font-size: 1.5em;
+        font-size: 1.6em;
+    }
+    .lang{
+        position: absolute;
+        top: -10px;
+        right: 10px;
+    }
+    .link-panel a{
+        font-size: 0.9em;
     }
  }

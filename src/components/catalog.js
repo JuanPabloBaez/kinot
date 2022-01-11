@@ -19,7 +19,7 @@ const Catalog = ({list}) => {
 
     useEffect(()=>{
         function setupList () {
-            const filterInput = list.filter(film => film.title.toLowerCase().includes(filter.toLowerCase()) || film.director.toLowerCase().includes(filter.toLowerCase()) ||filter ==="" );
+            const filterInput = list.filter(film => film.title_eng.toLowerCase().includes(filter.toLowerCase()) || film.director.toLowerCase().includes(filter.toLowerCase()) ||filter ==="" );
             setCatalogList(filterInput);
             return
         }
