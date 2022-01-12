@@ -88,12 +88,22 @@
     h1 {
         font-size: 1.2em;
     }
-    .slide-text p {
+    
+    .slide-synopsis {
         font-size: .8em;
+    }
+    .slide-info {
+        font-size: .7em;
     }
     .slide-header h1 {
         width: 60%;
     }
+}
+@media screen and (max-width: 450px) {
+    .slide-text  {
+        height: 40%;
+    }
+   
 }
 
                     /*      SUBSLIDE     */

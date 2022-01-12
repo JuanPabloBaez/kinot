@@ -30,7 +30,7 @@
     opacity: 0;
     transition: opacity 0.3s;
     text-align: center;
-    font-size: 0.9em;  
+    font-size: 0.8em;  
 }
 .card-overlay h2 {
     font-size: 1.3em;
@@ -42,6 +42,10 @@
     opacity: 1;  
 }
 
-
+@media screen and (max-width: 450px) {
+    .card-overlay {
+        font-size: .7em;
+    }
+}
 
 

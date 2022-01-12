@@ -10,7 +10,7 @@ import './main.css';
 const Main = ({list}) => {
     const [listB, setListB] = useState([]);
     const [listC, setListC] = useState([]);
-    const lang = useSelector((state) => state.lang.value)
+    const lang = useSelector((state) => state.lang.lang)
 
     useEffect(() =>{
         function getListB () {

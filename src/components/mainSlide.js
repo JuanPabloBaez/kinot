@@ -7,7 +7,7 @@ import "./mainSlide.css";
 function MainSlider ({list}) {
     const [current, setCurrent] = useState(0);
     const [featured, setFeatured] = useState([]);
-    const lang = useSelector((state) => state.lang.value)
+    const lang = useSelector((state) => state.lang.lang)
 
     useEffect(()=> {
       function getSelection () {

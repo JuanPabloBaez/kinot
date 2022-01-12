@@ -4,7 +4,7 @@ import { useSelector} from 'react-redux'
 
 
 const ContactForm = () => {
-  const lang = useSelector((state) => state.lang.value)
+  const lang = useSelector((state) => state.lang.lang)
 
   function sendEmail(e) {
     e.preventDefault();

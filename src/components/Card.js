@@ -6,7 +6,7 @@ import './Card.css';
 
 const Card = ({ film }) => {    
     const cardImg = require('../images/' + film.Id + 'card.jpg');
-    const lang = useSelector((state) => state.lang.value);
+    const lang = useSelector((state) => state.lang.lang);
 
  
     return (

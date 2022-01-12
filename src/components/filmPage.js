@@ -14,9 +14,9 @@ const FilmPage = (list) => {
   const [popupA, setPopupA] = useState(false);
   const [popupB, setPopupB] = useState(false);
   const [popupC, setPopupC] = useState(false);
-  const [episode, setEpisode] = useState("");
+  //const [episode, setEpisode] = useState("");
   const [setImg, setSetImg] = useState(false);
-  const lang = useSelector((state) => state.lang.value)
+  const lang = useSelector((state) => state.lang.lang)
 
   const {id} = useParams();
   window.scrollTo(0, 0);
@@ -66,16 +66,16 @@ const FilmPage = (list) => {
   },[Id]);
   
 
-    useEffect(() =>{
-      function getEpisode () {
-        const firstEp = video_link_serie[0];
-        setEpisode(firstEp)
-        return
-      }
-    getEpisode();
-    },[video_link_serie])
+    // useEffect(() =>{
+    //   function getEpisode () {
+    //     const firstEp = video_link_serie[0];
+    //     setEpisode(firstEp)
+    //     return
+    //   }
+    // getEpisode();
+    // },[])
 
-
+   
   const pagePoster = require("../images/" + Id + "poster.jpg");
   
   return (
@@ -93,7 +93,7 @@ const FilmPage = (list) => {
         </div> 
       :
       <>
-        {video_link_serie.length <= 1 && 
+        {video_link && 
           <ReactPlayer 
           className="page-video"
           url={video_link}
@@ -108,7 +108,7 @@ const FilmPage = (list) => {
           
             <ReactPlayer 
             className="page-video"
-            url={episode}
+            url={video_link_serie[0]}
             controls={true}
             playing={true}
             responsive="true"
@@ -118,7 +118,7 @@ const FilmPage = (list) => {
         }
          {video_link_serie.length > 1 && 
         <div className="serie-player">
-          {video_link_serie.map((ep, index) =>{ return <button key={index}>Episode{index + 1}</button>})}
+          {video_link_serie.map((ep, index) =>{ return <button  key={index}>Episode{index + 1}</button>})}
         </div>
       }
       </>    
