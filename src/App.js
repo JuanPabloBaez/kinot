@@ -6,6 +6,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { useSelector, useDispatch, } from "react-redux";
+import { setList } from "./redux/actions/filmActions";
 import './App.css';
 import NavBar from './components/nav';
 import Main from './components/main';
@@ -16,8 +18,10 @@ import Catalog from './components/catalog';
 
 
 function App() {
-  const [list, setList] = useState([]);
   const [isLoading, setIsloading] = useState(true);
+  const list = useSelector((state) => state.list.list);
+  const dispatch = useDispatch();
+
  
 
   useEffect(() => {
@@ -25,10 +29,8 @@ function App() {
       try {
            axios.get('https://beatkino-server.herokuapp.com/api/films').then(
           (response) => {
-            
-            setList(response.data);
+            dispatch(setList(response.data));
             setIsloading(false);
-            
             return;
           }
         )
@@ -38,7 +40,7 @@ function App() {
     }
     getList();
     
-  },[])
+  },[dispatch])
   
   return (
     <Router>
@@ -50,10 +52,10 @@ function App() {
           <>
           <Switch>
             <Route exact path="/">               
-              <Main list={list}  />                 
+              <Main  />                 
             </Route >
             <Route path="/film/:id">
-              <FilmPage list={list} /> 
+              <FilmPage  /> 
             </Route>
             <Route path="/catalog">
               <Catalog list={list}/>

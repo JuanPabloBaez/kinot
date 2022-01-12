@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from 'react-redux'
+
 import Card from "./Card";
 import Pagination from './pagination';
 //import FilterButton from "./catalogButton";
 import './catalog.css';
 
-const Catalog = ({list}) => {  
+const Catalog = () => {  
+    const list = useSelector((state) => state.list.list);
     const [filter, setFilter] = useState('');
     const [catalogList, setCatalogList] = useState(list);
-    //const [loading, setLoading] = useState(false);
+    
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
 
@@ -19,7 +22,7 @@ const Catalog = ({list}) => {
 
     useEffect(()=>{
         function setupList () {
-            const filterInput = list.filter(film => film.title_eng.toLowerCase().includes(filter.toLowerCase()) || film.director.toLowerCase().includes(filter.toLowerCase()) ||filter ==="" );
+            const filterInput = list.filter(film => film.title_eng.toLowerCase().includes(filter.toLowerCase()) || film.title_esp.toLowerCase().includes(filter.toLowerCase()) || film.director.toLowerCase().includes(filter.toLowerCase()) ||filter ==="" );
             setCatalogList(filterInput);
             return
         }

@@ -1,10 +1,14 @@
 import React, { useRef } from "react";
+import { useSelector } from 'react-redux'
 import "./mainSlide.css";
 import Card from "./Card";
 
 
- function SubSliderC ({listC}) {
+
+ function SubSliderC () {
     const slideRefC = useRef(null);
+    const list = useSelector((state) => state.list.list);
+
     
 
     function handlePrev (e) {
@@ -22,8 +26,8 @@ import Card from "./Card";
           </svg>
         </button>
         {  
-          listC.map((film, index) => {          
-            if (film.active === true) {
+          list.map((film, index) => {          
+            if (film.active === true && film.runtime < 15 ) {
               return(
                 <Card film={film} key={index}   />
               )            

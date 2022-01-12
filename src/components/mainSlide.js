@@ -4,10 +4,12 @@ import {Link} from "react-router-dom";
 import "./mainSlide.css";
 
 
-function MainSlider ({list}) {
+function MainSlider () {
     const [current, setCurrent] = useState(0);
     const [featured, setFeatured] = useState([]);
     const lang = useSelector((state) => state.lang.lang)
+    const list = useSelector((state) => state.list.list);
+
 
     useEffect(()=> {
       function getSelection () {
@@ -60,7 +62,6 @@ function MainSlider ({list}) {
                     <div className="slide-text">
                       <div className="slide-header">
                         <h1>{lang === "eng" ? film.title_eng : film.title_esp}</h1>
-                        
                         <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
                       </div>
                       <p className="slide-synopsis">{lang==="eng" ? film.log_line_eng: film.log_line_esp}</p>

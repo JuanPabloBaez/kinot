@@ -9,7 +9,8 @@ import FilmPageGallery from "./filmPageGallery"
 import './filmPage.css';
 
 
-const FilmPage = (list) => {
+const FilmPage = () => {
+
   const [videoPlayer, setVideoPlayer] = useState(false)
   const [popupA, setPopupA] = useState(false);
   const [popupB, setPopupB] = useState(false);
@@ -17,12 +18,12 @@ const FilmPage = (list) => {
   //const [episode, setEpisode] = useState("");
   const [setImg, setSetImg] = useState(false);
   const lang = useSelector((state) => state.lang.lang)
-
+  const list = useSelector((state) => state.list.list);
   const {id} = useParams();
   window.scrollTo(0, 0);
 
 
-  const film = list.list.filter(item => item.slug === id)[0];
+  const film = list.filter(item => item.slug === id)[0];
   const {
     title_eng,
     title_esp,    
@@ -184,7 +185,8 @@ const FilmPage = (list) => {
                   width="100%"
                   height="60vh"
                 />
-              </Popup> </>
+              </Popup> 
+              </>
           }
 
          { setImg===true && <> 

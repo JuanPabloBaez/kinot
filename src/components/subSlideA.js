@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
+import { useSelector } from 'react-redux'
 import "./mainSlide.css";
 import Card from "./Card";
 
 
 
- function SubSliderA ({list}) {
+ function SubSliderA () {
     const slideRef = useRef(null);
-    
+    const list = useSelector((state) => state.list.list);
 
     function handlePrev (e) {
       slideRef.current.scrollLeft += -400; 

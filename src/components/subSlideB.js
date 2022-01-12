@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
+import { useSelector } from 'react-redux'
 import Card from "./Card";
 import "./mainSlide.css";
 
 
- function SubSliderB ({listB}) {
+ function SubSliderB () {
   const slideRefB = useRef(null);
+  const list = useSelector((state) => state.list.list);
+ 
   
     function handlePrev (e) {
       slideRefB.current.scrollLeft += -400; 
@@ -21,8 +24,9 @@ import "./mainSlide.css";
           </svg>
         </button>
         {  
-          listB.map((film, index) => {          
-            if (film.active === true) {
+          list.map((film, index) => {          
+            
+            if (film.active===true && film.categorie.includes("Documentary")) {
               return(
                 <Card film={film} key={index}   />
               )} return null
