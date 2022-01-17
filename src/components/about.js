@@ -14,11 +14,14 @@ const About = () => {
                 </video>
                 <div className="about-sub">
                     <h1>About</h1>
-                    <p className='about-textA'>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. </p>
+                    <p className='about-textA'>beatkino is a platform to stream a curated selection of independent cinema from around the world. 
+Our goal is to collect remarkable works that might be dispersed and lost in the vast of the web and 
+out of view of the commercial circles. The films in our catalog are selected because for the unique voice and character of their authors, their 
+accomplishments on the cinematic craft or for presenting a particular point of view on a significant topic. </p>
                 </div>
             </div>
             <div className="about-content">
-                <p className='about-textB'> It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. </p>
+                <p className='about-textB'> For the viewers, we look to offer an interesting and diverse catalog, an interesting alternative to mainstream media. For the authors, we mean to be a place to keep on display the work that could be considered past, a dynamic environment to keep the films close to viewers.  </p>
                 <video className='videoTag' autoPlay="autoplay" loop="loop" muted  playsInline>
                     <source src={About2} type='video/mp4' />
                 </video>
