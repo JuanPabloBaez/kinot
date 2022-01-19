@@ -45,6 +45,7 @@
     border-bottom-right-radius: 15px;
     overflow: hidden;
     color: ghostwhite;
+    text-shadow: 0 0 5px black;
 }
 .slide-header {
     display: flex;

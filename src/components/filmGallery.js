@@ -15,10 +15,13 @@ function FilmGallery ({film}) {
     useEffect(()=>{
         function getImages () {
           const preImages = galleryFrames.filter(frame => frame.default.includes(film.Id + "frame"));
+          
           setImages(preImages);
+          
           return;  
         }
         getImages();
+        
     },[film.Id]); // eslint-disable-line react-hooks/exhaustive-deps
    
     async function setOrder ()  {
@@ -31,17 +34,19 @@ function FilmGallery ({film}) {
      useEffect(() => {
         const interval = setInterval(() => {
           setOrder()
-        },2500);
+        },4000);
         return () => clearInterval(interval);
       },[images]); // eslint-disable-line react-hooks/exhaustive-deps
 
+    
+   
 
     return (
         < div className="film-gallery-container">
            {images[0] && 
            <CrossfadeImage
           src={images[0].default}
-          duration={1000}
+          duration={900}
           timingFunction={"ease-out"}
           width= "100%"
         />  }         

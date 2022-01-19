@@ -13,7 +13,7 @@ function MainSlider () {
 
     useEffect(()=> {
       function getSelection () {
-        const featList = list.filter(film => film.featured === true);
+        const featList = list.filter(film => film.featured === true).reverse();
         setFeatured(featList);
         return
       };  
@@ -52,32 +52,29 @@ function MainSlider () {
       {
         featured.map((film, index)=> {
           const filmFrame = require("../images/" + film.Id + "frameA.jpg");
-          
-
-            return(
-              <div className={index=== current ? 'slide active' : 'slide'} key={index}>
-                {index === current && (
-                  <>
-                  <Link to={`/film/${film.slug}`}>
-                    <div className="slide-text">
-                      <div className="slide-header">
-                        <h1>{lang === "eng" ? film.title_eng : film.title_esp}</h1>
-                        <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
-                      </div>
-                      <p className="slide-synopsis">{lang==="eng" ? film.log_line_eng: film.log_line_esp}</p>
+          return(
+            <div className={index=== current ? 'slide active' : 'slide'} key={index}>
+              {index === current && (
+                <>
+                <Link to={`/film/${film.slug}`}>
+                  <div className="slide-text">
+                    <div className="slide-header">
+                      <h1>{lang === "eng" ? film.title_eng : film.title_esp}</h1>
+                      <p className='slide-info'>{film.year} / {film.country} / {film.runtime} min.</p>
                     </div>
-                  </Link>
-                  <img className='page-poster' 
-                  src={filmFrame.default}
-                  alt={film.title_eng}
-                  title={film.title_eng}
-                  /> 
-                  </>
-                )}     
-              </div>
-            ) 
-          }       
-        ).reverse()
+                    <p className="slide-synopsis">{lang==="eng" ? film.log_line_eng: film.log_line_esp}</p>
+                  </div>
+                </Link>
+                <img className='page-poster' 
+                src={filmFrame.default}
+                alt={film.title_eng}
+                title={film.title_eng}
+                /> 
+                </>
+              )}     
+            </div>
+          ) 
+        })
       }
     </section>
   )
