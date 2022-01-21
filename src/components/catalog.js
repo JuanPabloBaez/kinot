@@ -30,7 +30,7 @@ const Catalog = () => {
     },[filter]) // eslint-disable-line react-hooks/exhaustive-deps
     
 
-const filmsPerPage = 10;
+const filmsPerPage = 8;
 const pagesVisited = pageNumber * filmsPerPage;
 const displayFilms = catalogList
                         .slice(pagesVisited, pagesVisited + filmsPerPage)
