@@ -19,7 +19,7 @@
     border-radius: 5px;
 }
 .main-list {
-    width: fit-content;
+    
     padding: 0 auto;
     width: 95%;
     max-width: 950px;
@@ -29,21 +29,20 @@
     gap: 15px;    
 }
 
-.pagination {
-    display: flex;
-    margin: 2% auto;
-}
-
-.page-item {
-    margin: 10px;
-    
-}
-.page-link {
-    text-decoration: none;
+.paginationBttns {
     color: ghostwhite;
+    display: flex;
+    gap: 10px;
+    list-style: none;
 }
 
-.page-link:active {
-    color: green;
+/* .paginationDisabled {
+
+} */
+
+.paginationActive a {
+    font-weight: bolder;
+    font-size: 1.1em;
 }
+
 
