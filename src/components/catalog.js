@@ -14,7 +14,7 @@ const Catalog = () => {
     const [pageNumber, setPageNumber] = useState(0); 
     
     
-     // const [currentPage, setCurrentPage] = useState(1);
+
    
     const handleChange = (e) => {
         setFilter(e.target.value)
@@ -43,7 +43,7 @@ const changePage = ({ selected }) => {
   };
                            
 
-console.log(displayFilms)
+
 
     return(
         <div className="catalog-body">
