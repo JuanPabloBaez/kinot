@@ -4,7 +4,7 @@ import Card from "./Card";
 import ReactPaginate from "react-paginate";
 
 //import FilterButton from "./catalogButton";
-import './catalog.css';
+
 
 const Catalog = () => {  
     const list = useSelector((state) => state.list.list);
@@ -30,7 +30,7 @@ const Catalog = () => {
     },[filter]) // eslint-disable-line react-hooks/exhaustive-deps
     
 
-const filmsPerPage = 8;
+const filmsPerPage = 10;
 const pagesVisited = pageNumber * filmsPerPage;
 const displayFilms = catalogList
                         .slice(pagesVisited, pagesVisited + filmsPerPage)

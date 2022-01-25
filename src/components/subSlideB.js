@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useSelector } from 'react-redux'
 import Card from "./Card";
-import "./mainSlide.css";
+//import "./mainSlide.css";
 
 
  function SubSliderB () {

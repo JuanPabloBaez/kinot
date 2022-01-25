@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector} from 'react-redux'
 import ContactForm from './contactForm';
-import './contact.css';
+
 import InstaIcon from'../assets/instagram.png';
 
 const Contact = () => {  

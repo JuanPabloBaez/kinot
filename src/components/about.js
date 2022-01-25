@@ -1,7 +1,7 @@
 import React from "react";
 import About1 from '../assets/about01.mp4';
 import About2 from '../assets/about02.mp4';
-import './about.css';
+
 
 const About = () => { 
     window.scrollTo(0, 0);

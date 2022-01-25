@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setLang } from "../redux/actions/langActions";
 import {Link} from "react-router-dom";
-import  "./nav.css";
+//import  "./nav.css";
 
 const NavBar = () => {  
     const lang = useSelector((state) => state.lang.lang )

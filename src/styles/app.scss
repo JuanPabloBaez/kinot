@@ -1,0 +1,89 @@
+@import "./variables";
+@import "./nav";
+@import "./home";
+@import "./catalog";
+@import "./filmPage";
+@import "./aboutContact";
+
+
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  };
+  .App {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  };
+
+  .loader {
+    font-family: $logoFont;
+    border: 2px solid;
+    padding: 3px;
+    border-radius: 5%;
+    font-size: 5em;
+    width: fit-content;
+    margin: auto;
+    margin-top:10%;
+    animation-name: borderLoader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear; 
+  }
+  
+  @keyframes borderLoader {
+    0% {
+      color: $colorPalette1;
+      border-color: $colorPalette1;
+      box-shadow: 2px 2px 2px 1px $colorPalette1, -2px -2px 2px 1px $colorPalette1 ;
+    }
+    25% {
+        color: $colorPalette2;
+          border-color: $colorPalette2;
+        box-shadow: 2px 2px 2px 1px $colorPalette2, -2px -2px 2px 1px $colorPalette2 ;
+    }
+    50% {
+      color: $colorPalette3;
+      border-color: $colorPalette3;
+      box-shadow: 2px 2px 2px 1px $colorPalette3, -2px -2px 2px 1px $colorPalette3 ;
+    }
+    75% {
+      color: $colorPalette4;
+      border-color: $colorPalette4;
+      box-shadow: 2px 2px 2px 1px $colorPalette4, -2px -2px 2px 1p$colorPalette4 ;
+    }
+    100% {
+      color: $colorPalette5;
+      border-color: $colorPalette5;
+      box-shadow: 2px 2px 2px 1px $colorPalette5, -2px -2px 2px 1px $colorPalette5 ;
+  
+    }
+  }
+
+
+
+  .footer {
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    
+    
+    p{
+      width: fit-content;
+      margin: .8% 3%;
+      font-size: .9em;
+    }
+    a {
+      text-decoration: none;
+      color: currentColor;
+     
+    }
+  }

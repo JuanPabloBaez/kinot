@@ -4,7 +4,7 @@ import SubSliderA from "./subSlideA";
 import SubSliderB from "./subSlideB";
 import SubSliderC from "./subSlideC";
 import { useSelector } from 'react-redux'
-import './main.css';
+
 
 
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
     
     return( 
         <div className="main-body">
-            <div className="main-wrap">  
+             
                 <MainSlider   />
                 <p className="slide-tag">{lang==="eng" ? "most recent" : "recientes"}</p>
                 <SubSliderA  />
@@ -20,7 +20,7 @@ const Main = () => {
                 <SubSliderB />
                 <p className="slide-tag">{lang==="eng" ? "shortfilm":"cortometraje"}</p>
                 <SubSliderC /> 
-            </div>       
+                
         </div>   
     )
 }

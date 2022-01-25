@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player';
 import FilmGallery from "./filmGallery";
 import Popup from "./filmPagePopUp";
 import FilmPageGallery from "./filmPageGallery"
-import './filmPage.css';
+
 
 
 const FilmPage = () => {

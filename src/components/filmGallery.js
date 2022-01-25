@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CrossfadeImage from "react-crossfade-image";
-import './filmGallery.css';
+
 
 
 function FilmGallery ({film}) { 

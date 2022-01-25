@@ -1,0 +1,33 @@
+
+$textWhite: #f8f8ff;
+
+$logoFont:'Major Mono Display', monospace;
+
+$colorPalette1: #FF595E;
+$colorPalette2: #FFCA3A;
+$colorPalette3: #8AC926;
+$colorPalette4: #1982C4;
+$colorPalette5: #6A4C93;
+
+
+@mixin sliderArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    cursor: pointer;
+    user-select: none;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+}
+
+@mixin pageSliderArrow {
+    position: absolute;
+    height: 15vh;
+    width: 6vh;
+    background-color: hsla(0, 0%, 100%, 0.7);
+    border-radius: 7px;
+    border: none; 
+}

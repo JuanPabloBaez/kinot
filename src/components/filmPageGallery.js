@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./mainSlide.css";
+
 
 
 function FilmPageGallery (film) {

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useSelector } from 'react-redux'
-import "./mainSlide.css";
+//import "./mainSlide.css";
 import Card from "./Card";
 
 

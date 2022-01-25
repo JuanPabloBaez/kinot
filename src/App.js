@@ -6,9 +6,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { useSelector, useDispatch, } from "react-redux";
+import {useDispatch, } from "react-redux";
 import { setList } from "./redux/actions/filmActions";
-import './App.css';
+import './styles/app.css';
 import NavBar from './components/nav';
 import Main from './components/main';
 import FilmPage from './components/filmPage';
@@ -19,7 +19,6 @@ import Catalog from './components/catalog';
 
 function App() {
   const [isLoading, setIsloading] = useState(true);
-  const list = useSelector((state) => state.list.list);
   const dispatch = useDispatch();
 
  
@@ -39,7 +38,6 @@ function App() {
       }
     }
     getList();
-    
   },[dispatch])
   
   return (
@@ -58,7 +56,7 @@ function App() {
               <FilmPage  /> 
             </Route>
             <Route path="/catalog">
-              <Catalog list={list}/>
+              <Catalog />
             </Route>
             <Route path="/about">
               <About/>
@@ -71,7 +69,8 @@ function App() {
           )
         }
         <div className="footer">
-          <p>&copy; {new Date().getFullYear()}</p> 
+          <p>&copy; {new Date().getFullYear()}</p>
+          <p>website:  <a href="http://jpbaez.com/" target="_blank" rel="noreferrer">Juan Pablo Baez</a></p> 
         </div>  
       </div>
      </Router>
