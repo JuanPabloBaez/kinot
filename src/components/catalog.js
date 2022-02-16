@@ -11,7 +11,8 @@ const Catalog = () => {
     const [filter, setFilter] = useState('');
     const [catalogList, setCatalogList] = useState([]);
     
-    const [pageNumber, setPageNumber] = useState(0); 
+    const [pageNumber, setPageNumber] = useState(0);
+    const [filmsPerPage, setFilmsPerPage] = useState(10); 
     
     
 
@@ -29,8 +30,11 @@ const Catalog = () => {
         setupList();    
     },[filter]) // eslint-disable-line react-hooks/exhaustive-deps
     
+    useEffect(()=>{
+        setFilmsPerPage(window.innerWidth > 705 ? 10 : 6)
+    },[])
 
-const filmsPerPage = 10;
+
 const pagesVisited = pageNumber * filmsPerPage;
 const displayFilms = catalogList
                         .slice(pagesVisited, pagesVisited + filmsPerPage)

@@ -26,7 +26,7 @@
     width: 898px;
     display: flex;
     height: fit-content;
-    min-height: 55vh;
+    min-height: 50vh;
     flex-wrap: wrap;
     align-content: flex-start;
     gap: 10px;   
@@ -80,7 +80,7 @@
 @media screen and (max-width: 705px) {  
     .main-list {
         max-width: 519px;
-        min-height: 85vh;
+        min-height: 70vh;
     }
     
 }

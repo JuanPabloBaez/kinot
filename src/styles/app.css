@@ -468,7 +468,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 55vh;
+  min-height: 50vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-line-pack: start;
@@ -534,7 +534,7 @@
 @media screen and (max-width: 705px) {
   .main-list {
     max-width: 519px;
-    min-height: 85vh;
+    min-height: 70vh;
   }
 }
 
