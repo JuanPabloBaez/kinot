@@ -468,7 +468,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 65vh;
+  min-height: 55vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-line-pack: start;
@@ -522,6 +522,7 @@
 @media screen and (max-width: 945px) {
   .main-list {
     max-width: 705px;
+    min-height: 68vh;
   }
   .catalog-body {
     height: -webkit-fit-content;
