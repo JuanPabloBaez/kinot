@@ -146,6 +146,7 @@
   background: none;
   color: currentColor;
   border: none;
+  margin: 2% 7%;
 }
 
 @media screen and (min-width: 650px), (aspect-ratio: 4 / 3) {
@@ -155,7 +156,7 @@
   }
 }
 
-@media screen and (max-width: 500px), (aspect-ratio: 4 / 3) {
+@media screen and (max-width: 560px), (aspect-ratio: 4 / 3) {
   .logo {
     font-size: 1.6em;
   }
@@ -464,26 +465,45 @@
 }
 
 .paginationBttns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: ghostwhite;
   list-style: none;
-  height: 5vh;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  height: 8vh;
+  width: auto;
+  gap: 20px;
+  display: flexbox;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .paginationBttns li {
   display: inline;
-  margin: 0 10%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.paginationBttns li a {
+  height: auto;
+  cursor: pointer;
 }
 
 .paginationActive a {
   font-weight: bolder;
-  font-size: 1.4em;
+  font-size: 1.1em;
+  color: #6A4C93;
+  border-radius: 5%;
 }
 
 .previous, .next {
-  font-size: 1.8em;
+  font-size: 1.6em;
+  margin: 0 10%;
 }
 
 @media screen and (max-width: 945px) {

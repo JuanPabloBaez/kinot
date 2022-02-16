@@ -31,21 +31,37 @@
     margin: 3% auto;
 }
 .paginationBttns {
+    display: flex;
     color: ghostwhite;
     list-style: none;
-    height: 5vh;
-    width: fit-content;
+    height: 8vh;
+    width: auto;
+    gap: 20px;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    
+    
     li{
         display: inline;
-        margin: 0 10%;
+        height: fit-content;
+        a{
+           
+            height: auto;
+            cursor: pointer;
+           
+        }
     }
 }
 .paginationActive a {
     font-weight: bolder;
-    font-size: 1.4em;
+    font-size: 1.1em;
+    color: $colorPalette5;
+    border-radius: 5%;
 }
 .previous , .next {
-    font-size: 1.8em;
+    font-size: 1.6em;
+    margin: 0 10%;
 }
 
 @media screen and (max-width: 945px) {
