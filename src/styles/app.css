@@ -429,7 +429,7 @@
 
 .catalog-body {
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -438,9 +438,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .filter-container {
@@ -459,15 +462,17 @@
 
 .main-list {
   width: 898px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 65vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: fit-content;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   gap: 10px;
   margin: 3% auto;
 }
@@ -518,17 +523,17 @@
   .main-list {
     max-width: 705px;
   }
+  .catalog-body {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 
 @media screen and (max-width: 705px) {
   .main-list {
     max-width: 519px;
     min-height: 85vh;
-  }
-  .catalog-body {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
   }
 }
 
