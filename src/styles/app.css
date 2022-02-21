@@ -995,6 +995,9 @@
 .form-body {
   width: 90%;
   max-width: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1067,6 +1070,9 @@
 .social-icon img {
   height: 10vh;
   background-color: #f8f8ff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
 }
 
 .social-icon p {
@@ -1077,6 +1083,7 @@
 .social-icon a {
   -webkit-box-shadow: none;
           box-shadow: none;
+  border: none;
 }
 
 * {

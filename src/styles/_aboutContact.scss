@@ -72,6 +72,7 @@
 .form-body { 
     width: 90%; 
     max-width: 600px;
+    height: fit-content;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -120,6 +121,8 @@
     img{    
         height: 10vh;
         background-color: $textWhite; 
+        box-shadow: none;
+        border: none;
     }
     p {
         z-index: 2;
@@ -127,5 +130,6 @@
     }
     a {
         box-shadow: none;
+        border: none;
     }     
 }
