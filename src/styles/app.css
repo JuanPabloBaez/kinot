@@ -902,6 +902,7 @@
 .about-body {
   width: 98%;
   max-width: 800px;
+  height: 100%;
   margin: 2% auto;
   display: -webkit-box;
   display: -ms-flexbox;
