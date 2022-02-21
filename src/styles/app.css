@@ -485,7 +485,6 @@
   color: ghostwhite;
   list-style: none;
   height: 8vh;
-  width: auto;
   margin-top: auto;
   gap: 20px;
   display: flexbox;
@@ -1042,7 +1041,7 @@
 
 .social-icon {
   width: 100%;
-  height: 100%;
+  min-height: 35vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
