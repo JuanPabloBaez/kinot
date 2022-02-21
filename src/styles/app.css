@@ -3,6 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 10vh;
+  min-height: 80px;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -181,7 +182,7 @@
 
 .mySwiper {
   height: 50vh;
-  max-width: 900px;
+  max-width: 1000px;
   margin-bottom: 5vh;
   overflow: visible !important;
 }
@@ -239,7 +240,7 @@
 }
 
 .slide-header h2 {
-  margin: 0 2%;
+  margin: 0 1%;
   font-size: 1.8em;
 }
 
@@ -1066,6 +1067,11 @@
 .social-icon p {
   z-index: 2;
   color: #f8f8ff;
+}
+
+.social-icon a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 * {

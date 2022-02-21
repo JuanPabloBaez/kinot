@@ -110,16 +110,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-   
     background-color: black;
     margin-top: auto;
     margin-bottom: 0;
     img{    
         height: 10vh;
-        background-color: $textWhite;   
+        background-color: $textWhite; 
     }
     p {
         z-index: 2;
         color: $textWhite;
+    }
+    a {
+        box-shadow: none;
     }     
 }
