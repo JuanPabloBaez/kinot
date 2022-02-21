@@ -902,7 +902,9 @@
 .about-body {
   width: 98%;
   max-width: 800px;
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: 2% auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -934,7 +936,6 @@
   font-size: 1.15em;
   font-weight: 300;
   text-align: justify;
-  height: 68vh;
 }
 
 .about-content video {
