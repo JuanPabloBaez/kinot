@@ -995,9 +995,7 @@
 .form-body {
   width: 90%;
   max-width: 600px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
