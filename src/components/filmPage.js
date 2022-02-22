@@ -5,7 +5,10 @@ import { useSelector} from 'react-redux'
 import ReactPlayer from 'react-player';
 import FilmGallery from "./filmGallery";
 import Popup from "./filmPagePopUp";
-import FilmPageGallery from "./filmPageGallery"
+import FilmPageGallery from "./filmPageGallery";
+import translate from "translate";
+
+
 
 
 
@@ -21,6 +24,9 @@ const FilmPage = () => {
   const list = useSelector((state) => state.list.list);
   const {id} = useParams();
   window.scrollTo(0, 0);
+
+  translate.engine = "deepl";
+  translate.key = process.env.DEEPL_KEY;
 
 
   const film = list.filter(item => item.slug === id)[0];
