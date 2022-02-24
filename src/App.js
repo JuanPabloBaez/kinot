@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import {useDispatch, } from "react-redux";
 import { setList } from "./redux/actions/filmActions";
+
 import './styles/app.css';
 import NavBar from './components/nav';
 import Main from './components/main';
@@ -21,8 +22,9 @@ function App() {
   const [isLoading, setIsloading] = useState(true);
   const dispatch = useDispatch();
 
+  require('dotenv').config();
+  
  
-
   useEffect(() => {
     async function getList () {
       try {
@@ -39,6 +41,11 @@ function App() {
     }
     getList();
   },[dispatch])
+
+
+
+  
+
   
   return (
     <Router>

@@ -3,13 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useSelector} from 'react-redux'
 import ReactPlayer from 'react-player';
+import translate from "translate";
 import FilmGallery from "./filmGallery";
 import Popup from "./filmPagePopUp";
 import FilmPageGallery from "./filmPageGallery";
-import translate from "translate";
-
-
-
 
 
 const FilmPage = () => {
@@ -20,15 +17,19 @@ const FilmPage = () => {
   const [popupC, setPopupC] = useState(false);
   //const [episode, setEpisode] = useState("");
   const [setImg, setSetImg] = useState(false);
+
+  const [countryTrans, setCountryTrans] = useState("");
+  const [languageTrans, setLanguageTrans] = useState("");
+  const [subitleTrans, setSubitleTrans] = useState("");
+
   const lang = useSelector((state) => state.lang.lang)
   const list = useSelector((state) => state.list.list);
   const {id} = useParams();
   window.scrollTo(0, 0);
 
-  translate.engine = "deepl";
-  translate.key = process.env.DEEPL_KEY;
-
-
+  
+  
+  
   const film = list.filter(item => item.slug === id)[0];
   const {
     title_eng,
@@ -72,7 +73,6 @@ const FilmPage = () => {
     getImg();
   },[Id]);
   
-
     // useEffect(() =>{
     //   function getEpisode () {
     //     const firstEp = video_link_serie[0];
@@ -82,8 +82,21 @@ const FilmPage = () => {
     // getEpisode();
     // },[])
 
-   
-  const pagePoster = require("../images/" + Id + "poster.jpg");
+   const pagePoster = require("../images/" + Id + "poster.jpg");
+    
+   translate.engine = "deepl";
+   translate.key = process.env.DEEPL_KEY;
+   useEffect(()=> {
+    async function setTranslation () {
+      let translateCountry  =  await translate(country, "es");
+      let translateLanguage  =  language ? await translate(language, "es"): null;
+      let translateSubtitle  = subtitle ? await translate(subtitle, "es"): null;
+      setCountryTrans(translateCountry);
+      setLanguageTrans(translateLanguage);
+      setSubitleTrans(translateSubtitle);
+    };
+    setTranslation ();
+   },[country,language,subtitle])
   
   return (
     <div className="page-body">      
@@ -141,9 +154,9 @@ const FilmPage = () => {
         <div className="page-header-container"> 
           <div className="page-header">
             <h1>{lang==="eng" ? title_eng : title_esp}</h1>
-            <div className="page-info"><p > {year} / {country} / {runtime} {lang==="eng" ?"minutes":"minutos"}</p> {language && <p>/ {language}</p>}   { subtitle && <p>(sub: {subtitle})</p>} <p> / {format} </p></div>
+            <div className="page-info"><p > {year} / {lang==="eng" ? country : countryTrans } / {runtime} {lang==="eng" ?"minutes":"minutos"}</p> {language && <p>/ {lang==="eng" ? language : languageTrans }</p>}   { subtitle && <p>(sub: {lang==="eng" ? subtitle : subitleTrans })</p>} <p> / {format} </p></div>
           </div>
-          <p className="page-synopsis">{lang==="eng" ?synopsis_eng:synopsis_esp}</p>
+          <p className="page-synopsis">{lang==="eng" ? synopsis_eng:synopsis_esp}</p>
         </div>
       </div>
       
