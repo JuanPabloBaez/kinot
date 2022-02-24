@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 
-
 function FilmPageGallery (film) {
     const [current, setCurrent] = useState(0);
     const [imagesSet, setImagesSet] = useState([]);

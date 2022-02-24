@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import CrossfadeImage from "react-crossfade-image";
 
 
-
 function FilmGallery ({film}) { 
     const [images, setImages] = useState([]);
 
@@ -11,19 +10,16 @@ function FilmGallery ({film}) {
     }
     const galleryFrames = importAll(require.context('../images', false, /,*\.jpg$/));
 
-
     useEffect(()=>{
-        function getImages () {
-          const preImages = galleryFrames.filter(frame => frame.default.includes(film.Id + "frame"));
-          
+       function getImages () {
+          const preImages =   galleryFrames.filter(frame => frame.default.includes(film.Id + "frame"));
           setImages(preImages);
-          
           return;  
         }
         getImages();
         
-    },[film.Id]); // eslint-disable-line react-hooks/exhaustive-deps
-   
+    },[]); // eslint-disable-line react-hooks/exhaustive-deps
+
     async function setOrder ()  {
         const prev = [images.shift()];
         const next = images.concat(prev);    
@@ -37,9 +33,6 @@ function FilmGallery ({film}) {
         },4000);
         return () => clearInterval(interval);
       },[images]); // eslint-disable-line react-hooks/exhaustive-deps
-
-    
-   
 
     return (
         < div className="film-gallery-container">

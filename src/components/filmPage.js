@@ -11,7 +11,6 @@ import FilmPageGallery from "./filmPageGallery";
 
 
 const FilmPage = () => {
-
   const [videoPlayer, setVideoPlayer] = useState(false)
   const [popupA, setPopupA] = useState(false);
   const [popupB, setPopupB] = useState(false);
@@ -28,8 +27,6 @@ const FilmPage = () => {
   const {id} = useParams();
   window.scrollTo(0, 0);
 
-  
-  
   
   const film = list.filter(item => item.slug === id)[0];
   const {
@@ -126,7 +123,6 @@ const FilmPage = () => {
             /> 
         }
         {video_link_serie.length > 1 && 
-          
             <ReactPlayer 
             className="page-video"
             url={video_link_serie[0]}
@@ -141,7 +137,7 @@ const FilmPage = () => {
         <div className="serie-player">
           {video_link_serie.map((ep, index) =>{ return <button  key={index}>Episode{index + 1}</button>})}
         </div>
-      }
+        }
       </>    
     }
     
@@ -155,20 +151,19 @@ const FilmPage = () => {
         <div className="page-header-container"> 
           <div className="page-header">
             <h1>{lang==="eng" ? title_eng : title_esp}</h1>
-            <div className="page-info"><p > {year} / {lang==="eng" ? country : countryTrans } / {runtime} {lang==="eng" ?"minutes":"minutos"}</p> {language && <p>/ {lang==="eng" ? language : languageTrans }</p>}   { subtitle && <p>(sub: {lang==="eng" ? subtitle : subitleTrans })</p>} <p> / {format} </p></div>
+            <div className="page-info"><p > {year} / {lang==="eng" ? country : countryTrans } / {runtime} {lang==="eng" ?"minutes":"minutos"}</p> {language && <p>/ {lang==="eng" ? language : languageTrans }</p>} {subtitle && <p>(sub: {lang==="eng" ? subtitle : subitleTrans })</p>} <p> / {format} </p></div>
           </div>
           <p className="page-synopsis">{lang==="eng" ? synopsis_eng:synopsis_esp}</p>
         </div>
       </div>
       
-      
       <div className="page-second">
         <div className="cast">
           <h2>{lang==="eng" ? "Cast and Crew": "Equipo" }</h2>
           <ul className="cast-list">
-            { director  && <li>{lang==="eng"? "Director":"Dirección"}:  {director}</li>}
-            { writer    && <li>{lang==="eng"? "Writer":"Guion"}:    {writer}</li>}
-            { cast      && <li>{lang==="eng"? "Cast":"Elenco"}:      {cast}</li>}
+            { director  && <li>{lang==="eng"? "Director":"Dirección"}:{director}</li>}
+            { writer    && <li>{lang==="eng"? "Writer":"Guion"}: {writer}</li>}
+            { cast      && <li>{lang==="eng"? "Cast":"Elenco"}:  {cast}</li>}
             {(function() {
               if ( production && production_link !=="null" ) {
                   return <li>{lang==="eng"?"Production":"Productora"}: <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li> ;  
@@ -186,9 +181,9 @@ const FilmPage = () => {
             {music      && <li>{lang==="eng"? "Music":"Música"}:     {music}</li>}
           </ul>
         </div>
-        
         <div className="media"> 
-          { trailer_link && <> 
+          {trailer_link && 
+          <> 
             <button className="page-button button-trailer" onClick={() => setPopupA(true)} >
               <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
                 <path d="M22 13 L30 8 30 24 22 19 Z M2 8 L2 24 22 24 22 8 Z" />
@@ -196,20 +191,20 @@ const FilmPage = () => {
               <p>{lang==="eng"? "Watch trailer":"Ver trailer"}</p>
             </button>
             <Popup trigger={popupA} setTrigger={setPopupA}>
-                <ReactPlayer 
-                  className="page-video"
-                  url={trailer_link}
-                  controls={true}
-                  playing={true}
-                  responsive="true"
-                  width="100%"
-                  height="60vh"
-                />
-              </Popup> 
-              </>
+              <ReactPlayer 
+                className="page-video"
+                url={trailer_link}
+                controls={true}
+                playing={true}
+                responsive="true"
+                width="100%"
+                height="60vh"
+              />
+            </Popup> 
+          </>
           }
-
-         { setImg===true && <> 
+         {setImg===true && 
+         <> 
             <button className="page-button button-gallery" onClick={() => setPopupB(true)} >
               <svg id="i-photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
                 <path d="M20 24 L12 16 2 26 2 2 30 2 30 24 M16 20 L22 14 30 22 30 30 2 30 2 24" />
@@ -221,29 +216,28 @@ const FilmPage = () => {
               <FilmPageGallery film={film} />    
             </Popup>
           </>} 
-          
-          { making_Of && <>
+          {making_Of && 
+          <>
             <button className="page-button button-making-of" onClick={() => setPopupC(true)} >
-            <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
-              <path d="M22 13 L30 8 30 24 22 19 Z M2 8 L2 24 22 24 22 8 Z" />
-            </svg>
-            <p>{lang==="eng"? "Watch making of":"Ver making of"}</p>
-          </button>
-          <Popup trigger={popupC} setTrigger={setPopupC}>
-              <ReactPlayer 
-                className="page-video"
-                url={making_Of}
-                controls={true}
-                playing={true}
-                responsive="true"
-                width="100%"
-                height="60vh"         
-              />
-            </Popup>
-           </>}
+              <svg id="i-video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5">
+                <path d="M22 13 L30 8 30 24 22 19 Z M2 8 L2 24 22 24 22 8 Z" />
+              </svg>
+              <p>{lang==="eng"? "Watch making of":"Ver making of"}</p>
+            </button>
+            <Popup trigger={popupC} setTrigger={setPopupC}>
+                <ReactPlayer 
+                  className="page-video"
+                  url={making_Of}
+                  controls={true}
+                  playing={true}
+                  responsive="true"
+                  width="100%"
+                  height="60vh"         
+                />
+              </Popup>
+          </>}
         </div>
       </div>
-        
     </div> 
   );
 }

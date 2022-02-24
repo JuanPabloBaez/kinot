@@ -30,7 +30,8 @@ function App() {
       try {
            axios.get('https://beatkino-server.herokuapp.com/api/films').then(
           (response) => {
-            dispatch(setList(response.data));
+            let filterList = response.data.filter(film=>film.active===true).reverse();
+            dispatch(setList(filterList));
             setIsloading(false);
             return;
           }

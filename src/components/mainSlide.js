@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import { useSelector } from 'react-redux'
 import {Link} from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
@@ -9,15 +9,12 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 
 
-
-
-
 function MainSlider () {
     const lang = useSelector((state) => state.lang.lang)
     const list = useSelector((state) => state.list.list);
-    const feat = list.filter(film => film.featured === true).reverse()
+    const feat = list.filter(film => film.featured === true);
 
-    const [countryTrans, setCountryTrans] = useState("");
+    //const [countryTrans, setCountryTrans] = useState("");
     
     translate.engine = "deepl";
     translate.key = process.env.REACT_APP_DEEPL_KEY;
@@ -55,8 +52,8 @@ function MainSlider () {
       >
       {feat.map((film, index) => {
           const filmFrame = require("../images/" + film.Id + "frameA.jpg");
-          let lateCoun;
-          let filmCountry = translate(film.country, "es").then((result)=> {return result});
+          
+          //let filmCountry = translate(film.country, "es").then((result)=> {return result});
 
           //console.log(filmCountry)
           //setCountryTrans(filmCountry)

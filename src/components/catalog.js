@@ -1,53 +1,43 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from 'react-redux'
-import Card from "./Card";
+import { useSelector } from 'react-redux';
 import ReactPaginate from "react-paginate";
-
-//import FilterButton from "./catalogButton";
-
+import Card from "./Card";
 
 const Catalog = () => {  
     const list = useSelector((state) => state.list.list);
     const [filter, setFilter] = useState('');
     const [catalogList, setCatalogList] = useState([]);
-    
     const [pageNumber, setPageNumber] = useState(0);
     const [filmsPerPage, setFilmsPerPage] = useState(10); 
     
-    
-
-   
     const handleChange = (e) => {
         setFilter(e.target.value)
         };
+        
     useEffect(()=>{
-        function setupList () {
-            const listActive = list.filter(film => film.active=== true).reverse();
-            const filterInput = listActive.filter(film => film.title_eng.toLowerCase().includes(filter.toLowerCase()) || film.title_esp.toLowerCase().includes(filter.toLowerCase()) || film.director.toLowerCase().includes(filter.toLowerCase()) ||filter ==="" );
+        async function setupList () {
+            const filterInput = await list.filter(film => film.title_eng.toLowerCase().includes(filter.toLowerCase()) || film.title_esp.toLowerCase().includes(filter.toLowerCase()) || film.director.toLowerCase().includes(filter.toLowerCase()) ||filter ==="" );
             setCatalogList(filterInput);
             return
         }
         setupList();    
-    },[filter]) // eslint-disable-line react-hooks/exhaustive-deps
+    },[filter,list]) 
     
     useEffect(()=>{
         setFilmsPerPage(window.innerWidth > 705 ? 10 : 6)
     },[])
 
 
-const pagesVisited = pageNumber * filmsPerPage;
-const displayFilms = catalogList
-                        .slice(pagesVisited, pagesVisited + filmsPerPage)
-                        .map((film, index) => {
-                            return <Card  film={film} key={index} />                           
-                        })
-const pageCount = Math.ceil(catalogList.length / filmsPerPage);
-const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
-                           
-
-
+    const pagesVisited = pageNumber * filmsPerPage;
+    const displayFilms = catalogList
+                            .slice(pagesVisited, pagesVisited + filmsPerPage)
+                            .map((film, index) => {
+                                return <Card  film={film} key={index} />                           
+                            });
+    const pageCount = Math.ceil(catalogList.length / filmsPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    };
 
     return(
         <div className="catalog-body">

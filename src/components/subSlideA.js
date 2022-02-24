@@ -1,14 +1,10 @@
 import React, { useRef } from "react";
-import { useSelector } from 'react-redux'
-//import "./mainSlide.css";
 import Card from "./Card";
 
 
-
- function SubSliderA () {
+ function SubSliderA ({list}) {
     const slideRef = useRef(null);
-    const list = useSelector((state) => state.list.list);
-
+  
     function handlePrev (e) {
       slideRef.current.scrollLeft += -400; 
     }
@@ -23,15 +19,12 @@ import Card from "./Card";
             <path d="M20 30 L8 16 20 2" />
           </svg>
         </button>
-
         {  
           list.map((film, index) => {          
-            if (film.active === true) {
               return(
-                <Card film={film} key={index}   />
+                <Card film={film} key={index} />
               )
-            } return null
-          }).reverse() 
+          })
         } 
         <button className="subSlide-button button-next" onClick={handleNext}>
           <svg id="i-chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="60" height="130" fill="none" stroke="hsla(0, 0%, 100%, 0.9)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6">
