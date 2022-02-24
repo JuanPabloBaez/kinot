@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector} from 'react-redux'
 import ReactPlayer from 'react-player';
 import translate from "translate";
+
 import FilmGallery from "./filmGallery";
 import Popup from "./filmPagePopUp";
 import FilmPageGallery from "./filmPageGallery";
@@ -85,7 +86,7 @@ const FilmPage = () => {
    const pagePoster = require("../images/" + Id + "poster.jpg");
     
    translate.engine = "deepl";
-   translate.key = process.env.DEEPL_KEY;
+   translate.key = process.env.REACT_APP_DEEPL_KEY;
    useEffect(()=> {
     async function setTranslation () {
       let translateCountry  =  await translate(country, "es");
