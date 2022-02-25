@@ -173,12 +173,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 10;
 }
 .popup-inner {
     position: relative;
     width: 100%;
     max-width: 1100px;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,16 +204,18 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%; padding: 5%;
-}
-.page-slide  {
+    width: 100%; 
+    padding: 5%;
     .active {
         width: 100%;
+        display:inline;
     }
     img {
         width: 100%; 
+        margin: 0 auto
     }
 }
+
 .page-left-arrow{
     @include pageSliderArrow();
     left: 0%;    

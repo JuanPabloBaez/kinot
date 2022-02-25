@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLang } from "../redux/actions/langActions";
 import {Link} from "react-router-dom";
 
 
 const NavBar = () => {  
-    const lang = useSelector((state) => state.lang.lang )
-    const dispatch = useDispatch()
+    const lang = useSelector((state) => state.lang.lang);
+    const dispatch = useDispatch();
+    const [isListDown, setIsListDown] = useState(false);
+
+    // const handleClick = () => {
+    //     const interval = setInterval(() => {
+    //         setIsListDown(!isListDown);
+    //         console.log("yay");
+    //       },4000);
+    //     return () => clearInterval(interval);
+    // }
+    
+
+   
+ 
    
     return(
         <div className="nav-bar">
@@ -18,8 +31,17 @@ const NavBar = () => {
                         <path d="M23 23 L30 30"  />
                     </svg>
                 </Link>
-                <Link to="/about">{lang==="eng" ?"About":"Acerca"}</Link>
-                <Link to="/contact">{lang==="eng" ?"Contact":"Contacto"}</Link>
+                <div className="dropdown-menu">
+                    <button onClick={() => setIsListDown(!isListDown)} className={isListDown===true?"dropbtn active":"dropbtn"}>+</button>
+                       { isListDown &&
+                       <div id="myDropdown" className="dropdown-content">
+                        <Link  to="/about" onClick={() => setIsListDown(false)} >{lang==="eng" ?" About ":" Acerca "}</Link>
+                        <Link  to="/contact"onClick={() => setIsListDown(false)}>{lang==="eng" ?" Contact ":" Contacto "}</Link>
+                        </div>
+                        }
+                </div>
+                <Link className="normal-menu" to="/about">{lang==="eng" ?"About":"Acerca"}</Link>
+                <Link className="normal-menu" to="/contact">{lang==="eng" ?"Contact":"Contacto"}</Link>
                 <button className='lang' onClick={()=>dispatch(setLang(lang==="eng"? "esp" : "eng"))}  >{ lang==="eng" ? <p><b>ENG</b>/esp</p> : <p>eng/<b>ESP</b></p>}</button>
             </div>
         </div>
