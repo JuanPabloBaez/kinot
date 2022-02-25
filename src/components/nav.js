@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLang } from "../redux/actions/langActions";
 import {Link} from "react-router-dom";
@@ -9,17 +9,6 @@ const NavBar = () => {
     const dispatch = useDispatch();
     const [isListDown, setIsListDown] = useState(false);
 
-    // const handleClick = () => {
-    //     const interval = setInterval(() => {
-    //         setIsListDown(!isListDown);
-    //         console.log("yay");
-    //       },4000);
-    //     return () => clearInterval(interval);
-    // }
-    
-
-   
- 
    
     return(
         <div className="nav-bar">
