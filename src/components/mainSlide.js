@@ -52,7 +52,7 @@ function MainSlider () {
       className="mySwiper"
       >
       {feat.map((film, index) => {
-        const filmFrame = require("../images/" + film.Id + "frameA.jpg"); 
+        const filmFrame = require("../images/" + film.Id + "frameA.webp"); 
         let countryTranslated = countryTrans.find(item => item[0]===film.title_eng)      
         
           return (

@@ -61,7 +61,7 @@ const FilmPage = () => {
   useEffect(() => {
     function getImg () {
       try { 
-        require("../images/" + Id + "setA.jpg");        
+        require("../images/" + Id + "setA.webp");        
         setSetImg(true)
         
       } catch(error) {
@@ -80,7 +80,7 @@ const FilmPage = () => {
     // getEpisode();
     // },[])
 
-   const pagePoster = require("../images/" + Id + "poster.jpg");
+   const pagePoster = require("../images/" + Id + "poster.webp");
     
    translate.engine = "deepl";
    translate.key = process.env.REACT_APP_DEEPL_KEY;

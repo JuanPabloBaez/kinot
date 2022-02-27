@@ -8,7 +8,7 @@ function FilmGallery ({film}) {
     function importAll(r) {
       return r.keys().map(r);
     }
-    const galleryFrames = importAll(require.context('../images', false, /,*\.jpg$/));
+    const galleryFrames = importAll(require.context('../images', false, /,*\.webp$/));
 
     useEffect(()=>{
        function getImages () {

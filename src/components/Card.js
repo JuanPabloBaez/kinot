@@ -5,7 +5,7 @@ import translate from "translate";
 
 
 const Card = ({ film }) => {    
-    const cardImg = require('../images/' + film.Id + 'card.jpg');
+    const cardImg = require('../images/' + film.Id + 'card.webp');
     const lang = useSelector((state) => state.lang.lang);
 
     const [countryTrans, setCountryTrans] = useState("");
