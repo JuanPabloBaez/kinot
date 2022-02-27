@@ -1008,6 +1008,18 @@
   }
 }
 
+.contact-body {
+  height: 85vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .contact-title {
   max-width: 600px;
   width: 90%;
@@ -1018,7 +1030,6 @@
 .form-body {
   width: 90%;
   max-width: 600px;
-  height: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1069,7 +1080,7 @@
 
 .social-icon {
   width: 100%;
-  min-height: 35vh;
+  height: 35vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1085,7 +1096,6 @@
           justify-content: center;
   background-color: black;
   margin-top: auto;
-  margin-bottom: 0;
 }
 
 .social-icon img {
@@ -1203,9 +1213,8 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: .5% 3%;
+  margin: .5% 2%;
   font-size: .9em;
-  height: 100%;
 }
 
 .footer a {

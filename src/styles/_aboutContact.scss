@@ -63,6 +63,13 @@
         
     }
 }
+
+.contact-body{
+    height:85vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;    
+}
 .contact-title {
     max-width: 600px;
     width: 90%;
@@ -72,7 +79,6 @@
 .form-body { 
     width: 90%; 
     max-width: 600px;
-    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -110,14 +116,16 @@
 
 .social-icon {
     width: 100%;
-    min-height: 35vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
     background-color: black;
+    
     margin-top: auto;
-    margin-bottom: 0;
+    
+    
     img{    
         height: 10vh;
         background-color: $textWhite; 
