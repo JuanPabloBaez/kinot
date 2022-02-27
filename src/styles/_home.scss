@@ -9,14 +9,15 @@
     max-width: 1100px;
     margin-bottom: 5vh;
     overflow: visible !important;
-   
-   
+    z-index: 1 !important;
+    
       
 }
 .swiper-button-next::after, .swiper-button-prev::after {
     color: ghostwhite;
     font-size: 4rem !important;
     text-shadow: 0 0 10px  black;
+   
 }
 
 .swiper-pagination {
@@ -30,6 +31,7 @@
 .swiper-slide {
     height: 100%;
     width: 100%;
+    z-index: 1 !important;
 }
 .gallery-poster {
     width: 100%;
@@ -86,7 +88,7 @@
             font-size: 1.6rem;
     }
     .slide-text{
-        height: 40%;
+        height: 45%;
     }
     .slide-synopsis {
         font-size: .9rem;

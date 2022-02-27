@@ -18,7 +18,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 2%;
+  gap: 3%;
   color: #f8f8ff;
   z-index: 5;
 }
@@ -87,23 +87,16 @@
 }
 
 .link-panel {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: 50%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  position: relative;
-  margin: 0;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
   gap: 2%;
 }
 
@@ -118,6 +111,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
 }
 
 #i-search {
@@ -131,6 +128,8 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  z-index: 999999;
+  margin: 0;
 }
 
 .dropdown-menu button {
@@ -189,7 +188,7 @@
   background: none;
   color: currentColor;
   border: none;
-  margin: 2% 5%;
+  margin: 0 2%;
   font-size: .9rem;
 }
 
@@ -225,6 +224,7 @@
   max-width: 1100px;
   margin-bottom: 5vh;
   overflow: visible !important;
+  z-index: 1 !important;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
@@ -246,6 +246,7 @@
 .swiper-slide {
   height: 100%;
   width: 100%;
+  z-index: 1 !important;
 }
 
 .gallery-poster {
@@ -321,7 +322,7 @@
     font-size: 1.6rem;
   }
   .slide-text {
-    height: 40%;
+    height: 45%;
   }
   .slide-synopsis {
     font-size: .9rem;
