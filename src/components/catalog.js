@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import ReactPaginate from "react-paginate";
 import Card from "./Card";
 
-const Catalog = () => {  
+const Catalog = () => {
+    const lang = useSelector((state) => state.lang.lang);  
     const list = useSelector((state) => state.list.list);
     const [filter, setFilter] = useState('');
     const [catalogList, setCatalogList] = useState([]);
@@ -42,8 +43,8 @@ const Catalog = () => {
     return(
         <div className="catalog-body">
             <div className="filter-container">
-                <label htmlFor="searchInput">search:</label> 
-                <input type="text" name="searchInput" value={filter} onChange={handleChange} placeholder=" title or director" />
+                <label htmlFor="searchInput">{lang==="eng" ? "Search:" : "Buscar:"}</label> 
+                <input type="text" name="searchInput" value={filter} onChange={handleChange} placeholder={lang==="eng" ? " title or director" : " título o director "} />
             </div>
             <div className="main-list">
                 {displayFilms}

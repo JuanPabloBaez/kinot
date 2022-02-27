@@ -53,7 +53,10 @@ function App() {
       <div className="App">
         <NavBar />
         {isLoading ? (
-          <h1 className="loader">bK</h1>
+          <span className="loader">
+          <h1 >BK</h1>
+          <p>Loading</p>
+          </span>
         ):(              
           <>
           <Switch>

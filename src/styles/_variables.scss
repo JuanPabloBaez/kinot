@@ -11,18 +11,7 @@ $colorPalette5: #6A4C93;
 
 
 
-@mixin sliderArrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 4;
-    cursor: pointer;
-    user-select: none;
-    width: auto;
-    height: auto;
-    background: none;
-    border: none;
-}
+
 
 @mixin pageSliderArrow {
     position: absolute;
@@ -31,4 +20,35 @@ $colorPalette5: #6A4C93;
     background-color: hsla(0, 0%, 100%, 0.7);
     border-radius: 7px;
     border: none; 
+}
+
+@mixin colorAnimation {
+    animation-name: rainbow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  
+  @keyframes rainbow {
+    0% {
+      color: $colorPalette1;
+   
+    }
+    25% {
+        color: $colorPalette2;
+       
+    }
+    50% {
+      color: $colorPalette3;
+    
+    }
+    75% {
+      color: $colorPalette4;
+   
+    }
+    100% {
+      color: $colorPalette5;
+  
+    }
+  }
 }

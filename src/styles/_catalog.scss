@@ -1,7 +1,7 @@
 
 .catalog-body{
     width: 100%;
-    min-height: 90vh;
+    min-height: 85vh;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -15,11 +15,14 @@
     max-width: 950px;
     margin: 2% auto;
     color: $textWhite;
+    font-size: 1.2rem;
     input{
         width: 100%;
+        height: 2rem;
         max-width: 450px;
         margin-left: 1%;
         border-radius: 5px;
+        font-size: 1rem;
     }
 }
 .main-list {
@@ -46,22 +49,20 @@
         display: inline;
         height: fit-content;
         a{
-           
             height: auto;
             cursor: pointer;
-           
+            font-size: 1.5rem;
         }
     }
 }
 .paginationActive a {
-    font-weight: bolder;
-    font-size: 1.1em;
-    color: $colorPalette5;
+    color: $colorPalette2;
     border-radius: 5%;
 }
-.previous , .next {
-    font-size: 1.6em;
+.previousBttn , .nextBttn {
+    font-size: 2.5rem !important;
     margin: 0 10%;
+    
 }
 
 @media screen and (max-width: 945px) {

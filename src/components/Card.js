@@ -22,6 +22,7 @@ const Card = ({ film }) => {
           setCategoryTrans(translateCategory);
         };
         setTranslationCard ();
+       
        },[film])
 
  

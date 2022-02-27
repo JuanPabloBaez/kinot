@@ -161,24 +161,24 @@ const FilmPage = () => {
         <div className="cast">
           <h2>{lang==="eng" ? "Cast and Crew": "Equipo" }</h2>
           <ul className="cast-list">
-            { director  && <li>{lang==="eng"? "Director":"Dirección"}:{director}</li>}
-            { writer    && <li>{lang==="eng"? "Writer":"Guion"}: {writer}</li>}
-            { cast      && <li>{lang==="eng"? "Cast":"Elenco"}:  {cast}</li>}
+            { director  && <li><p className="role">{lang==="eng"? "Director":"Dirección"}:</p>{director}</li>}
+            { writer    && <li><p className="role">{lang==="eng"? "Writer":"Guion"}:</p> {writer}</li>}
+            { cast      && <li><p className="role">{lang==="eng"? "Cast":"Elenco"}: </p> {cast}</li>}
             {(function() {
               if ( production && production_link !=="null" ) {
-                  return <li>{lang==="eng"?"Production":"Productora"}: <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li> ;  
+                  return <li><p className="role">{lang==="eng"?"Production":"Productora"}:</p> <a href={production_link} target="_blank" rel="noreferrer">{production} </a> </li> ;  
               } if (production ==="") {
                   return null
               } else {
-                  return <li>{lang==="eng"?"Production":"Productora"}:  {production}</li>;
+                  return <li><p className="role">{lang==="eng"?"Production":"Productora"}:</p>  {production}</li>;
               }
             })()}
-            { producer  && <li>{lang==="eng"? "Production":"Producción"}: {producer}</li>}
-            {cinematography && <li>{lang==="eng"? "Cinematography":"Fotografía"}: {cinematography}</li>}
-            {editing    && <li>{lang==="eng"? "Editing":"Edición"}:   {editing}</li>}
-            {sound      && <li>{lang==="eng"? "Sound":"Sonido"}:     {sound}</li>}
-            {vfx        && <li>{lang==="eng"? "Post production":"Posproducción"}: {vfx}</li>}
-            {music      && <li>{lang==="eng"? "Music":"Música"}:     {music}</li>}
+            { producer  && <li><p className="role">{lang==="eng"? "Production":"Producción"}:</p> {producer}</li>}
+            {cinematography && <li><p className="role">{lang==="eng"? "Cinematography":"Fotografía"}:</p> {cinematography}</li>}
+            {editing    && <li><p className="role">{lang==="eng"? "Editing":"Edición"}:</p>{editing}</li>}
+            {sound      && <li><p className="role">{lang==="eng"? "Sound":"Sonido"}:</p>{sound}</li>}
+            {vfx        && <li><p className="role">{lang==="eng"? "Post production":"Posproducción"}:</p> {vfx}</li>}
+            {music      && <li><p className="role">{lang==="eng"? "Music":"Música"}:</p> {music}</li>}
           </ul>
         </div>
         <div className="media"> 

@@ -15,11 +15,11 @@ const Main = () => {
     return( 
         <div className="main-body">
                 <MainSlider   />
-                <p className="slide-tag">{lang==="eng" ? "most recent" : "recientes"}</p>
+                <p className="slide-tag">{lang==="eng" ? "Most Recent" : "Recientes"}</p>
                 <SubSliderA list={list}  />
-                <p className="slide-tag">{lang==="eng" ? "documentary":"documental"}</p>
+                <p className="slide-tag">{lang==="eng" ? "Documentary":"Documental"}</p>
                 <SubSliderA list={listB}  />
-                <p className="slide-tag">{lang==="eng" ? "shortfilm":"cortometraje"}</p>
+                <p className="slide-tag">{lang==="eng" ? "Shortfilm":"Cortometraje"}</p>
                 <SubSliderA list={listC}  />
         </div>   
     )
