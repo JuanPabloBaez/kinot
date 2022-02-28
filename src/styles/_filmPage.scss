@@ -110,6 +110,7 @@
         h1 {
             font-size: 2em;
             text-align: left;
+            font-weight: 500;
         }
     } 
     .page-synopsis {
@@ -127,6 +128,7 @@
     font-weight:200;
     h2 {
         margin: 1%;
+        font-weight: 500;
     }
     a {
         text-decoration: none;
@@ -143,7 +145,7 @@
     }
     .role{
         display: inline;
-        font-weight: 600;
+        font-weight: 500;
         margin-right: .7%;
     }
 }

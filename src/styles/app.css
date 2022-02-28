@@ -288,7 +288,7 @@
   color: #f8f8ff;
   background: none;
   font-size: 2.3em;
-  font-weight: 800;
+  font-weight: 600;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 1px solid #f8f8ff;
@@ -434,6 +434,7 @@
 .slide-header h2 {
   display: inline;
   font-size: 1.8em;
+  font-weight: 500;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -599,6 +600,7 @@
 
 .card-container .card-overlay h2 {
   font-size: 1.3em;
+  font-weight: 500;
 }
 
 .card-container .card-overlay i {
@@ -893,6 +895,7 @@
   .page-header h1 {
     font-size: 2em;
     text-align: left;
+    font-weight: 500;
   }
   .page-synopsis {
     width: auto;
@@ -917,6 +920,7 @@
 
 .cast h2 {
   margin: 1%;
+  font-weight: 500;
 }
 
 .cast a {
@@ -937,7 +941,7 @@
 
 .cast .role {
   display: inline;
-  font-weight: 600;
+  font-weight: 500;
   margin-right: .7%;
 }
 
@@ -1136,9 +1140,9 @@
 }
 
 .about-content h1 {
-  font-size: 3em;
+  font-family: "Major Mono Display", monospace;
+  font-size: 2.8em;
   font-weight: 300;
-  font-style: oblique;
   margin: auto auto 0 5%;
   line-height: 1;
   margin-top: 5%;
@@ -1192,6 +1196,7 @@
   width: 90%;
   margin: 0 auto;
   padding-top: 6vh;
+  font-weight: 500;
 }
 
 .form-body {

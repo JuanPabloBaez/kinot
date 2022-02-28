@@ -22,6 +22,7 @@ function MainSlider () {
     
     useEffect(()=> {
       function translationCountry () {
+        
         feat.map( async item =>{
           let translatedCountry = await translate(item.country, "es");
           setCountryTrans(arr =>[ ...arr, [item.title_eng, translatedCountry]])
