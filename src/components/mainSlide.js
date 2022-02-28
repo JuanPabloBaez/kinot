@@ -28,7 +28,7 @@ function MainSlider () {
           })
       };
       translateCountry();
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
     
   return (
     <Swiper
