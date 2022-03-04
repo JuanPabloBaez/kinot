@@ -1,11 +1,11 @@
-#BEATKINO
+# BEATKINO
+
+Film stream application.
 
 *https://beatkino.com/#/*
 
 
-Film stream application.
-
-Tech stack:
+### Tech stack:
 
 React
 
