@@ -1,8 +1,9 @@
-beatkino.com
+#BEATKINO
+
+*https://beatkino.com/#/*
+
 
 Film stream application.
-
-BETA version: https://beatkino-beta.netlify.app/#/
 
 Tech stack:
 
@@ -19,5 +20,3 @@ Express
 MongoDb
 
 
-icons by dan klammer https://danklammer.com/bytesize-icons/
- 

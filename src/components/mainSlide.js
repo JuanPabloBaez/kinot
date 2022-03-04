@@ -24,12 +24,13 @@ function MainSlider () {
           feat.map(async item =>{
             let translatedCountry ={transCoun: await translate(item.country, "es")};
             Object.assign(item,translatedCountry);
-            setCountryTrans((prev)=> [...prev, item])
+            setCountryTrans((prev)=> [item,...prev])
           })
       };
       translateCountry();
     },[]) // eslint-disable-line react-hooks/exhaustive-deps
     
+    console.log(countryTrans)
   return (
     <Swiper
       spaceBetween={50}
