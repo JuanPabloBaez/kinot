@@ -21,16 +21,23 @@ function MainSlider () {
 
     useEffect(()=>{
       async function translateCountry () {
+          let collectItems=[];
           feat.map(async item =>{
             let translatedCountry ={transCoun: await translate(item.country, "es")};
-            Object.assign(item,translatedCountry);
-            setCountryTrans((prev)=> [item,...prev])
-          })
+            Object.assign(item,translatedCountry); 
+            await collectItems.push(item);
+            setCountryTrans(collectItems);
+            return
+            
+          });
+          
+          
+          
       };
       translateCountry();
     },[]) // eslint-disable-line react-hooks/exhaustive-deps
     
-    console.log(countryTrans)
+    
   return (
     <Swiper
       spaceBetween={50}
@@ -53,6 +60,7 @@ function MainSlider () {
       >
       {countryTrans.map((film, index) => {
         const filmFrame = require("../images/" + film.Id + "frameA.webp"); 
+        
           return (
             <SwiperSlide key={index}>
               <Link to={`/film/${film.slug}`}>
