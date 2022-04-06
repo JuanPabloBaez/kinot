@@ -9,7 +9,7 @@ const Contact = () => {
 
     return(
     <div className="contact-body">
-        <h2 className="contact-title">{lang==="eng" ? "Contact":"Contacto"}</h2>
+        <h2 className="contact-title">{lang==="eng" ? "coNtAct":"coNtActo"}</h2>
         <ContactForm />
         <div className="social-icon">
             <p>{lang==="eng" ?"also on":"también en"}</p>

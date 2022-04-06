@@ -40,7 +40,7 @@ let textSpaB="Para los espectadores, buscamos ofrecer un catálogo interesante y
                     <source src={About1} type='video/mp4' />
                 </video>
                 <div className="about-sub">
-                    <h1>Acerca</h1>
+                    <h1>AcercA</h1>
                     <p className='about-textA'>{textSpaA}</p>
                 </div>
             </div>

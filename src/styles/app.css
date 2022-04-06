@@ -1196,6 +1196,7 @@
 
 .contact-title {
   max-width: 600px;
+  font-family: "Major Mono Display", monospace;
   width: 90%;
   margin: 0 auto;
   padding-top: 6vh;
