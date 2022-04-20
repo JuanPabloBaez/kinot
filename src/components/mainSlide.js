@@ -2,12 +2,16 @@ import React, { useEffect, useState }  from "react";
 import { useSelector } from 'react-redux';
 
 import {Link} from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper";
 import translate from "translate";
 
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/swiper.min.css'
+import 'swiper/swiper.min.css';
+import 'swiper/swiper-bundle.css';
+
+
+
+
 
 function MainSlider () {
     const lang = useSelector((state) => state.lang.lang)
